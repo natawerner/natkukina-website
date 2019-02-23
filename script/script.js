@@ -147,6 +147,7 @@ function calendarFunction() {
     x.style.display = "flex";
   } else {
     x.style.display = "none";
+    document.getElementById('calendarimg').src = calendarimages[0];
   }
 }
 
@@ -166,6 +167,7 @@ function wysinawygFunction() {
     x.style.display = "flex";
   } else {
     x.style.display = "none";
+    document.getElementById('wysinawygimg').src = wysinawygimages[0];
   }
 }
 
@@ -186,6 +188,7 @@ function lugemikFunction() {
     x.style.display = "flex";
   } else {
     x.style.display = "none";
+    document.getElementById('lugemikimg').src = lugemikimages[0];
   }
 }
 
@@ -250,7 +253,7 @@ function hyperFunction() {
     x.style.display = "flex";
   } else {
     x.style.display = "none";
-    document.getElementById('fbimg').src = hyperimages[0];
+    document.getElementById('hyperimg').src = hyperimages[0];
   }
 }
 
@@ -263,6 +266,7 @@ function toteFunction() {
     x.style.display = "none";
   }
 }
+
 /*Face book*/
 fb = 0, fbimages = ["images/fb/1.jpg", "images/fb/2.jpg", "images/fb/3.jpg"];
 function fbImage() {
