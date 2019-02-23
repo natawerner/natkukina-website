@@ -125,12 +125,14 @@ function silentVideoFunction() {
     video.autoplay = false;
     video.controls = true;
     var silentVideo = document.getElementById("silentVideo")
-    var text = document.getElementById("text")
+    var text = document.getElementById("text0")
     silentVideo.insertBefore(video, text)
-
-    x.style.display = "flex";
+    video.setAttribute("id", "silentVideoVideo");
+    x.style.display = "block";
   } else {
     x.style.display = "none";
+    var silentVideo = document.getElementById("silentVideo");
+    silentVideo.removeChild(silentVideoVideo);
   }
 }
 
@@ -153,6 +155,16 @@ function calendarFunction() {
   }
 }
 
+/*WYSINAWYG*/
+w = 0, wysinawygimages = ["images/wysinawyg/1.png", "images/wysinawyg/2.png", "images/wysinawyg/3.png", "images/wysinawyg/4.png"];
+function wysinawygImage() {
+  if (w < wysinawygimages.length-1) {
+   w++;
+    } else {
+      w = 0;
+    }
+    document.getElementById('wysinawygimg').src = wysinawygimages[w];
+}
 function wysinawygFunction() {
   var x = document.getElementById("wysinawyg");
   if (x.style.display === "none") {
@@ -160,6 +172,17 @@ function wysinawygFunction() {
   } else {
     x.style.display = "none";
   }
+}
+
+/*Lugemik*/
+l = 0, lugemikimages = ["images/lugemik/1.png", "images/lugemik/2.png", "images/lugemik/3.png", "images/lugemik/4.png", "images/lugemik/5.png"];
+function lugemikImage() {
+  if (l < lugemikimages.length-1) {
+   l++;
+    } else {
+      l = 0;
+    }
+    document.getElementById('lugemikimg').src = lugemikimages[l];
 }
 
 function lugemikFunction() {
@@ -171,6 +194,17 @@ function lugemikFunction() {
   }
 }
 
+/*Pregnancy*/
+p = 0, pregnancyimages = ["images/pregnancy/1.png", "images/pregnancy/2.png", "images/pregnancy/3.png", "images/pregnancy/4.png", "images/pregnancy/5.png"];
+function pregnancyImage() {
+  if (p < pregnancyimages.length-1) {
+   p++;
+    } else {
+      p = 0;
+    }
+    document.getElementById('pregnancyimg').src = pregnancyimages[p];
+}
+
 function pregnancyFunction() {
   var x = document.getElementById("pregnancy");
   if (x.style.display === "none") {
@@ -179,13 +213,23 @@ function pregnancyFunction() {
     x.style.display = "none";
   }
 }
-
+/*Lollipop VIP*/
 function lollipopFunction() {
   var x = document.getElementById("lollipop");
   if (x.style.display === "none") {
-    x.style.display = "flex";
+    var video = document.createElement('video');
+    video.src = 'https://cdn.glitch.com/2e0cf87a-999b-4b20-bf6a-2358bd8f52f0%2FCrushed%20lollipop%20VIP.mp4?1550950794348';
+    video.autoplay = false;
+    video.controls = true;
+    var lollipop = document.getElementById("lollipop");
+    var text = document.getElementById("text2");
+    lollipop.insertBefore(video, text);
+    video.setAttribute("id", "lollipopVideo");
+    x.style.display = "block";
   } else {
     x.style.display = "none";
+    var lollipop = document.getElementById("lollipop");
+    lollipop.removeChild(lollipopVideo);
   }
 }
 
