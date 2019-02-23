@@ -1,3 +1,8 @@
+body {
+  margin:0;
+  padding:0;
+}
+
 @font-face {
   font-family: 'Pragmatica';
   src: url('https://cdn.glitch.com/2e0cf87a-999b-4b20-bf6a-2358bd8f52f0%2Fpragmatica.ttf?1550441282993');
@@ -38,6 +43,7 @@ a {
   cursor: default;
 }
 .content img {
+  filter: drop-shadow(0 0 0.5rem black);
   object-fit: contain;
   max-height: 80vh;
   margin-right: 20px;
@@ -92,4 +98,8 @@ a {
     display:block;
  }
 
+}
+
+#fb {
+  padding-bottom: 0;
 }

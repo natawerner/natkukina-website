@@ -31,15 +31,10 @@ function constImage() {
 }
 function constFunction() {
   var x = document.getElementById("const");
-  var y = document.getElementById("const1");
   if (x.style.display === "none") {
     x.style.display = "flex";
-    y.style.backgroundColor = "black";
-    y.style.color = "white";
   } else {
     x.style.display = "none";
-    y.style.backgroundColor = "white";
-    y.style.color = "black";
     document.getElementById('constimg').src = constimages[0];
   }
 }
@@ -204,15 +199,21 @@ function pregnancyImage() {
     }
     document.getElementById('pregnancyimg').src = pregnancyimages[p];
 }
-
 function pregnancyFunction() {
   var x = document.getElementById("pregnancy");
+  var y = document.getElementById("pregnancy1");
   if (x.style.display === "none") {
     x.style.display = "flex";
+    y.style.backgroundColor = "black";
+    y.style.color = "white";
   } else {
     x.style.display = "none";
+    y.style.color = "black";
+    y.style.backgroundColor = "white";
+    document.getElementById('imposterimg').src = imposterimages[0];
   }
 }
+
 /*Lollipop VIP*/
 function lollipopFunction() {
   var x = document.getElementById("lollipop");
@@ -233,11 +234,56 @@ function lollipopFunction() {
   }
 }
 
+/*Hypergraphics*/
+h = 0, hyperimages = ["images/hyper/1.png", "images/hyper/2.png", "images/hyper/3.png"];
+function hyperImage() {
+  if (h < hyperimages.length-1) {
+   h++;
+    } else {
+      h = 0;
+    }
+    document.getElementById('hyperimg').src = hyperimages[h];
+}
+function hyperFunction() {
+  var x = document.getElementById("hyper");
+  if (x.style.display === "none") {
+    x.style.display = "flex";
+  } else {
+    x.style.display = "none";
+    document.getElementById('fbimg').src = hyperimages[0];
+  }
+}
+
+/*Полигамия суицид*/
 function toteFunction() {
   var x = document.getElementById("tote");
   if (x.style.display === "none") {
     x.style.display = "flex";
   } else {
     x.style.display = "none";
+  }
+}
+/*Face book*/
+fb = 0, fbimages = ["images/fb/1.jpg", "images/fb/2.jpg", "images/fb/3.jpg"];
+function fbImage() {
+  if (fb < fbimages.length-1) {
+   fb++;
+    } else {
+      fb = 0;
+    }
+    document.getElementById('fbimg').src = fbimages[fb];
+}
+function fbFunction() {
+  var x = document.getElementById("fb");
+  var y = document.getElementById("fb1");
+  if (x.style.display === "none") {
+    x.style.display = "flex";
+    y.style.backgroundColor = "black";
+    y.style.color = "white";
+  } else {
+    x.style.display = "none";
+    y.style.color = "black";
+    y.style.backgroundColor = "white";
+    document.getElementById('fbimg').src = fbimages[0];
   }
 }
