@@ -38,6 +38,7 @@ a {
 }
 
 .content {
+  z-index: 1;
   line-height: 100%;
   display: flex;
   font-size: 18px;
