@@ -98,6 +98,10 @@ a {
     display:block;
  }
 
+ .content video {
+   width: 90vw;
+ }
+
 }
 
 #fb {
