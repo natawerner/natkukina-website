@@ -96,7 +96,17 @@ function interviewFunction() {
     document.getElementById('interviewimg').src = interviewimages[0];
   }
 }
+/*Film club*/
+f = 0, filmclubimages = ["images/filmclub/1.png", "images/filmclub/2.png", "images/filmclub/3.png", "images/filmclub/4.png"];
 
+function filmclubImage() {
+  if (f < filmclubimages.length-1) {
+   f++;
+    } else {
+      f = 0;
+    }
+    document.getElementById('filmclubimg').src = filmclubimages[f];
+}
 function filmClubFunction() {
   var x = document.getElementById("filmClub");
   if (x.style.display === "none") {
