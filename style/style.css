@@ -45,9 +45,8 @@ a {
   cursor: e-resize;
 }
 
-.content video {
+.content iframe {
   object-fit: contain;
-  max-height: 80vh;
   margin-right: 20px;
 }
 
