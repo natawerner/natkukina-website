@@ -117,9 +117,20 @@ function filmClubFunction() {
 }
 
 /*Silent video*/
+
+
+
 function silentVideoFunction() {
   var x = document.getElementById("silentVideo");
   if (x.style.display === "none") {
+    var video = document.createElement('video');
+    video.src = 'https://cdn.glitch.com/2e0cf87a-999b-4b20-bf6a-2358bd8f52f0%2F1.mp4?1550940475371';
+    video.autoplay = false;
+    video.controls = true;
+    var silentVideo = document.getElementById("silentVideo")
+    var text = document.getElementById("text")
+    silentVideo.insertBefore(video, text)
+
     x.style.display = "flex";
   } else {
     x.style.display = "none";
