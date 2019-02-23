@@ -16,6 +16,7 @@ a {
 }
 
 .project {
+  z-index: 1;
   font-family: Pragmatica;
   font-size: 72px;
   line-height: 95%;
@@ -38,7 +39,6 @@ a {
 }
 
 .content {
-  z-index: 1;
   line-height: 100%;
   display: flex;
   font-size: 18px;
