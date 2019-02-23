@@ -20,7 +20,6 @@ window.onload = function() {
 
 /*Constitution*/
 i = 0, constimages = ["images/const/1.png", "images/const/2.gif", "images/const/3.png"];
-
 function constImage() {
   if (i < constimages.length-1) {
    i++;
@@ -32,10 +31,18 @@ function constImage() {
 function constFunction() {
   var x = document.getElementById("const");
   if (x.style.display === "none") {
+    var content = document.createElement("img");
+    content.src = "images/const/1.png";
+    var store = document.getElementById("const");
+    var text = document.getElementById("constText");
+    store.insertBefore(content, text);
+    content.setAttribute("id","constimg");
+    content.setAttribute("onclick","constImage()")
     x.style.display = "flex";
   } else {
     x.style.display = "none";
-    document.getElementById('constimg').src = constimages[0];
+    var store = document.getElementById("const");
+    store.removeChild(constimg);
   }
 }
 
@@ -54,6 +61,13 @@ function imposterFunction() {
   var x = document.getElementById("imposter");
   var y = document.getElementById("imposter1");
   if (x.style.display === "none") {
+    var content = document.createElement("img");
+    content.src = "images/imposter/1.png";
+    var store = document.getElementById("imposter");
+    var text = document.getElementById("imposterText");
+    store.insertBefore(content, text);
+    content.setAttribute("id","imposterimg");
+    content.setAttribute("onclick","imposterImage()")
     x.style.display = "flex";
     y.style.backgroundColor = "black";
     y.style.color = "white";
@@ -61,7 +75,8 @@ function imposterFunction() {
     x.style.display = "none";
     y.style.backgroundColor = "white";
     y.style.color = "black";
-    document.getElementById('imposterimg').src = imposterimages[0];
+    var store = document.getElementById("imposter");
+    store.removeChild(imposterimg);
   }
 }
 
@@ -78,17 +93,25 @@ function interviewImage() {
 }
 
 function interviewFunction() {
-  var x = document.getElementById("interview");
-  var y = document.getElementById("interview1");
-  if (x.style.display === "none") {
-    x.style.display = "flex";
-    y.style.backgroundColor = "black";
-    y.style.color = "white";
-  } else {
-    x.style.display = "none";
-    y.style.backgroundColor = "white";
-    y.style.color = "black";
-    document.getElementById('interviewimg').src = interviewimages[0];
+var x = document.getElementById("interview");
+var y = document.getElementById("interview1");
+if (x.style.display === "none") {
+  var content = document.createElement("img");
+  content.src = "images/interview/1.png";
+  var store = document.getElementById("interview");
+  var text = document.getElementById("interviewText");
+  store.insertBefore(content, text);
+  content.setAttribute("id","interviewimg");
+  content.setAttribute("onclick","interviewImage()")
+  x.style.display = "flex";
+  y.style.backgroundColor = "black";
+  y.style.color = "white";
+} else {
+  x.style.display = "none";
+  y.style.backgroundColor = "white";
+  y.style.color = "black";
+  var store = document.getElementById("interview");
+  store.removeChild(interviewimg);
   }
 }
 /*Film club*/
@@ -104,10 +127,18 @@ function filmclubImage() {
 function filmClubFunction() {
   var x = document.getElementById("filmClub");
   if (x.style.display === "none") {
+    var content = document.createElement("img");
+    content.src = "images/filmclub/1.png";
+    var store = document.getElementById("filmClub");
+    var text = document.getElementById("filmClubText");
+    store.insertBefore(content, text);
+    content.setAttribute("id","filmclubimg");
+    content.setAttribute("onclick","filmclubImage()")
     x.style.display = "flex";
   } else {
     x.style.display = "none";
-    document.getElementById('filmclubimg').src = filmclubimages[0];
+    var store = document.getElementById("filmClub");
+    store.removeChild(filmclubimg);
   }
 }
 
@@ -144,10 +175,18 @@ function calendarImage() {
 function calendarFunction() {
   var x = document.getElementById("calendar");
   if (x.style.display === "none") {
+    var content = document.createElement("img");
+    content.src = "images/calendar/1.png";
+    var store = document.getElementById("calendar");
+    var text = document.getElementById("calendarText");
+    store.insertBefore(content, text);
+    content.setAttribute("id","calendarimg");
+    content.setAttribute("onclick","calendarImage()")
     x.style.display = "flex";
   } else {
     x.style.display = "none";
-    document.getElementById('calendarimg').src = calendarimages[0];
+    var store = document.getElementById("calendar");
+    store.removeChild(calendarimg);
   }
 }
 
@@ -164,10 +203,18 @@ function wysinawygImage() {
 function wysinawygFunction() {
   var x = document.getElementById("wysinawyg");
   if (x.style.display === "none") {
+    var content = document.createElement("img");
+    content.src = "images/wysinawyg/1.png";
+    var store = document.getElementById("wysinawyg");
+    var text = document.getElementById("wysinawygText");
+    store.insertBefore(content, text);
+    content.setAttribute("id","wysinawygimg");
+    content.setAttribute("onclick","wysinawygImage()")
     x.style.display = "flex";
   } else {
     x.style.display = "none";
-    document.getElementById('wysinawygimg').src = wysinawygimages[0];
+    var store = document.getElementById("wysinawyg");
+    store.removeChild(wysinawygimg);
   }
 }
 
@@ -185,10 +232,18 @@ function lugemikImage() {
 function lugemikFunction() {
   var x = document.getElementById("lugemik");
   if (x.style.display === "none") {
+    var content = document.createElement("img");
+    content.src = "images/lugemik/1.png";
+    var store = document.getElementById("lugemik");
+    var text = document.getElementById("lugemikText");
+    store.insertBefore(content, text);
+    content.setAttribute("id","lugemikimg");
+    content.setAttribute("onclick","lugemikImage()")
     x.style.display = "flex";
   } else {
     x.style.display = "none";
-    document.getElementById('lugemikimg').src = lugemikimages[0];
+    var store = document.getElementById("lugemik");
+    store.removeChild(lugemikimg);
   }
 }
 
@@ -206,14 +261,22 @@ function pregnancyFunction() {
   var x = document.getElementById("pregnancy");
   var y = document.getElementById("pregnancy1");
   if (x.style.display === "none") {
+    var content = document.createElement("img");
+    content.src = "images/pregnancy/1.png";
+    var store = document.getElementById("pregnancy");
+    var text = document.getElementById("pregnancyText");
+    store.insertBefore(content, text);
+    content.setAttribute("id","pregnancyimg");
+    content.setAttribute("onclick","pregnancyImage()")
     x.style.display = "flex";
     y.style.backgroundColor = "black";
     y.style.color = "white";
   } else {
     x.style.display = "none";
-    y.style.color = "black";
     y.style.backgroundColor = "white";
-    document.getElementById('imposterimg').src = imposterimages[0];
+    y.style.color = "black";
+    var store = document.getElementById("pregnancy");
+    store.removeChild(pregnancyimg);
   }
 }
 
@@ -250,10 +313,18 @@ function hyperImage() {
 function hyperFunction() {
   var x = document.getElementById("hyper");
   if (x.style.display === "none") {
+    var content = document.createElement("img");
+    content.src = "images/hyper/1.png";
+    var store = document.getElementById("hyper");
+    var text = document.getElementById("hyperText");
+    store.insertBefore(content, text);
+    content.setAttribute("id","hyperimg");
+    content.setAttribute("onclick","hyperImage()")
     x.style.display = "flex";
   } else {
     x.style.display = "none";
-    document.getElementById('hyperimg').src = hyperimages[0];
+    var store = document.getElementById("hyper");
+    store.removeChild(hyperimg);
   }
 }
 
@@ -281,13 +352,21 @@ function fbFunction() {
   var x = document.getElementById("fb");
   var y = document.getElementById("fb1");
   if (x.style.display === "none") {
+    var content = document.createElement("img");
+    content.src = "images/fb/1.jpg";
+    var store = document.getElementById("fb");
+    var text = document.getElementById("fbText");
+    store.insertBefore(content, text);
+    content.setAttribute("id","fbimg");
+    content.setAttribute("onclick","fbImage()")
     x.style.display = "flex";
     y.style.backgroundColor = "black";
     y.style.color = "white";
   } else {
     x.style.display = "none";
-    y.style.color = "black";
     y.style.backgroundColor = "white";
-    document.getElementById('fbimg').src = fbimages[0];
+    y.style.color = "black";
+    var store = document.getElementById("fb");
+    store.removeChild(fbimg);
   }
 }
