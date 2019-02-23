@@ -98,7 +98,6 @@ function interviewFunction() {
 }
 /*Film club*/
 f = 0, filmclubimages = ["images/filmclub/1.png", "images/filmclub/2.png", "images/filmclub/3.png", "images/filmclub/4.png"];
-
 function filmclubImage() {
   if (f < filmclubimages.length-1) {
    f++;
@@ -113,9 +112,11 @@ function filmClubFunction() {
     x.style.display = "flex";
   } else {
     x.style.display = "none";
+    document.getElementById('filmclubimg').src = filmclubimages[0];
   }
 }
 
+/*Silent video*/
 function silentVideoFunction() {
   var x = document.getElementById("silentVideo");
   if (x.style.display === "none") {
@@ -125,6 +126,16 @@ function silentVideoFunction() {
   }
 }
 
+/*Calendar*/
+c = 0, calendarimages = ["images/filmclub/1.png", "images/filmclub/2.png", "images/filmclub/3.png", "images/filmclub/4.png"];
+function calendarImage() {
+  if (c < calendarimages.length-1) {
+   c++;
+    } else {
+      c = 0;
+    }
+    document.getElementById('calendarimg').src = calendarimages[c];
+}
 function calendarFunction() {
   var x = document.getElementById("calendar");
   if (x.style.display === "none") {
