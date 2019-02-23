@@ -117,9 +117,6 @@ function filmClubFunction() {
 }
 
 /*Silent video*/
-
-
-
 function silentVideoFunction() {
   var x = document.getElementById("silentVideo");
   if (x.style.display === "none") {
@@ -138,7 +135,7 @@ function silentVideoFunction() {
 }
 
 /*Calendar*/
-c = 0, calendarimages = ["images/filmclub/1.png", "images/filmclub/2.png", "images/filmclub/3.png", "images/filmclub/4.png"];
+c = 0, calendarimages = ["images/calendar/1.png", "images/calendar/2.png"];
 function calendarImage() {
   if (c < calendarimages.length-1) {
    c++;
