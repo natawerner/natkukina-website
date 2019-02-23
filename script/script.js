@@ -13,22 +13,12 @@ function contactsFunction() {
 
 /*Menu items*/
 window.onload = function() {
-  document.getElementById('const').style.display = 'none';
-  document.getElementById('imposter').style.display = 'none';
-  document.getElementById('interview').style.display = 'none';
-  document.getElementById('filmClub').style.display = 'none';
-  document.getElementById('silentVideo').style.display = 'none';
-  document.getElementById('calendar').style.display = 'none';
-  document.getElementById('wysinawyg').style.display = 'none';
-  document.getElementById('lugemik').style.display = 'none';
-  document.getElementById('pregnancy').style.display = 'none';
-  document.getElementById('lollipop').style.display = 'none';
-  document.getElementById('tote').style.display = 'none';
-  document.getElementById('hyper').style.display = 'none';
-  document.getElementById('fb').style.display = 'none';
-};
+  var contents = document.getElementsByClassName("content");
+  for(var i = 0; i < contents.length; i++) {
+    contents[i].style.display = "none";}
+  };
 
-/*Contacts*/
+/*Constitution*/
 i = 0, constimages = ["images/const/1.png", "images/const/2.gif", "images/const/3.png"];
 
 function constImage() {
