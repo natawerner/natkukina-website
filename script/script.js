@@ -21,7 +21,11 @@ window.onload = function() {
 /*Constitution*/
 i = 0, constimages = ["images/const/1.png", "images/const/2.gif", "images/const/3.png"];
 function constImage() {
-  if (i < constimages.length-1) {i++;} else {i = 0;}
+  if (i < constimages.length-1) {
+   i++;
+    } else {
+      i = 0;
+    }
     document.getElementById('constimg').src = constimages[i];}
 
 i2 = 0, constimages2 = ["images/const/arena/1.jpg", "images/const/arena/2.jpg", "images/const/arena/3.jpg", "images/const/arena/4.jpg", "images/const/arena/5.jpg", "images/const/arena/6.jpg", "images/const/arena/7.jpg"];
@@ -37,6 +41,7 @@ function constImage2() {
 function constFunction() {
   var x = document.getElementById("const");
   var text = document.getElementById("constText");
+  var info = document.getElementById("constInfo");
   var randomItem = constimages2[Math.floor(Math.random()*constimages2.length)];
   if (x.style.display === "none") {
     var content = document.createElement("img");
@@ -47,19 +52,18 @@ function constFunction() {
     x.style.display = "flex";
     var arena = document.createElement("img");
     arena.src = randomItem;
-    text.appendChild(arena);
+    info.appendChild(arena);
     arena.setAttribute("id","constimg2");
     arena.setAttribute("onclick","constImage2()")
   } else {
     x.style.display = "none";
     x.removeChild(constimg);
-    text.removeChild(constimg2);
+    info.removeChild(constimg2);
   }
 }
 
 /*Imposter*/
 u = 0, imposterimages = ["images/imposter/1.png", "images/imposter/2.png", "images/imposter/3.png", "images/imposter/4.png", "images/imposter/5.png"];
-
 function imposterImage() {
   if (u < imposterimages.length-1) {
    u++;
@@ -68,9 +72,22 @@ function imposterImage() {
     }
     document.getElementById('imposterimg').src = imposterimages[u];
 }
+u2 = 0, imposterimages2 = ["images/imposter/arena/1.jpg", "images/imposter/arena/2.jpg", "images/imposter/arena/3.jpg", "images/imposter/arena/4.jpg", "images/imposter/arena/5.png", "images/imposter/arena/6.jpg", "images/imposter/arena/7.png"];
+function imposterImage2() {
+  if (u2 < imposterimages2.length-1) {
+   u2++;
+    } else {
+      u2 = 0;
+    }
+    document.getElementById('imposterimg2').src = imposterimages2[u2];
+}
+
 function imposterFunction() {
   var x = document.getElementById("imposter");
   var y = document.getElementById("imposter1");
+  var text = document.getElementById("imposterText");
+  var info = document.getElementById("imposterInfo");
+  var randomItem = imposterimages2[Math.floor(Math.random()*imposterimages2.length)];
   if (x.style.display === "none") {
     var content = document.createElement("img");
     content.src = "images/imposter/1.png";
@@ -82,6 +99,12 @@ function imposterFunction() {
     x.style.display = "flex";
     y.style.backgroundColor = "black";
     y.style.color = "white";
+    document.getElementById("imposterLink").style.color = "white"
+    var arena = document.createElement("img");
+    arena.src = randomItem;
+    info.appendChild(arena);
+    arena.setAttribute("id","imposterimg2");
+    arena.setAttribute("onclick","imposterImage2()")
   } else {
     x.style.display = "none";
     y.style.backgroundColor = "white";

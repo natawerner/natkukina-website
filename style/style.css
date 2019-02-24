@@ -1,3 +1,4 @@
+
 @font-face {
   font-family: 'Pragmatica';
   src: url('https://cdn.glitch.com/2e0cf87a-999b-4b20-bf6a-2358bd8f52f0%2Fpragmatica.ttf?1550441282993');
@@ -46,13 +47,13 @@ a {
   display: flex;
   font-size: 18px;
   text-transform: none;
-  padding: 20px 20px 20px 5px;
+  padding: 20px 10px 20px 5px;
   cursor: default;
 }
 .content img {
   filter: drop-shadow(0 0 0.5rem black);
   object-fit: contain;
-  max-width: 80%;
+  max-width: 60%;
   align-self: flex-start;
   max-height: 80vh;
   margin-right: 20px;
@@ -65,24 +66,35 @@ a {
   margin-bottom: 20px;
 }
 
-.content p {
+.info p {
+  flex-grow: 1;
   max-width: 600px;
 }
 
 .info {
+  flex-grow: 1;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   max-height: 100%;
 }
-.info img {
-  flex-grow: 1;
+
+.arena {
+  align-items: center;
+  display: flex;
+  flex-direction: column-reverse;
+}
+.arena img {
+  margin-right: 0;
   padding: 0 0 0 20px;
   filter: drop-shadow(0 0 0.5rem #ff00ff);
-  max-width: 400px;
-  max-height: 400px;
+  max-width: 20vw;
+  max-height: 30vh;
   vertical-align: bottom;
-  margin-top: auto;
   margin-left: auto;
+}
+.arena a {
+  padding-bottom: 10px;
+  align-self: flex-end;
 }
 
 @media (max-width: 1400px) {
@@ -94,7 +106,7 @@ a {
     font-size: 36px;
   }
   .content img {
-    width: 100%;
+    max-width: 100%;
     margin-right: 0px;
     padding-bottom: 40px;
   }
@@ -119,9 +131,15 @@ a {
  .info {
    flex-direction:column;
  }
-.info img {
+ .arena img {
+  margin: auto;
+ }
+.arena img {
   padding-top: 20px;
   height: 300px;
-
 }
+.arena a {
+  padding-top: 40px;
+}
+
 }
