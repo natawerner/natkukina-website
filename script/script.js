@@ -21,27 +21,39 @@ window.onload = function() {
 /*Constitution*/
 i = 0, constimages = ["images/const/1.png", "images/const/2.gif", "images/const/3.png"];
 function constImage() {
-  if (i < constimages.length-1) {
-   i++;
+  if (i < constimages.length-1) {i++;} else {i = 0;}
+    document.getElementById('constimg').src = constimages[i];}
+
+i2 = 0, constimages2 = ["images/const/arena/1.jpg", "images/const/arena/2.jpg", "images/const/arena/3.jpg", "images/const/arena/4.jpg", "images/const/arena/5.jpg", "images/const/arena/6.jpg", "images/const/arena/7.jpg"];
+function constImage2() {
+  if (i2 < constimages2.length-1) {
+   i2++;
     } else {
-      i = 0;
+      i2 = 0;
     }
-    document.getElementById('constimg').src = constimages[i];
+    document.getElementById('constimg2').src = constimages2[i2];
 }
+
 function constFunction() {
   var x = document.getElementById("const");
+  var text = document.getElementById("constText");
+  var randomItem = constimages2[Math.floor(Math.random()*constimages2.length)];
   if (x.style.display === "none") {
     var content = document.createElement("img");
     content.src = "images/const/1.png";
-    var store = document.getElementById("const");
-    var text = document.getElementById("constText");
-    store.insertBefore(content, text);
+    x.insertBefore(content, text);
     content.setAttribute("id","constimg");
     content.setAttribute("onclick","constImage()")
     x.style.display = "flex";
+    var arena = document.createElement("img");
+    arena.src = randomItem;
+    text.appendChild(arena);
+    arena.setAttribute("id","constimg2");
+    arena.setAttribute("onclick","constImage2()")
   } else {
     x.style.display = "none";
     x.removeChild(constimg);
+    text.removeChild(constimg2);
   }
 }
 
