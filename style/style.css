@@ -10,7 +10,8 @@ a {
 }
 
 .project {
-  z-index: 1;
+  position: relative;
+  z-index: 0;
   font-family: Pragmatica;
   font-size: 80px;
   line-height: 95%;
@@ -40,12 +41,13 @@ a {
   top: 0px;
   right: 20px;
   cursor: pointer;
+  line-height: normal;
 }
 
 .content {
   line-height: 100%;
   display: flex;
-  font-size: 18px;
+  font-size: 18pt;
   text-transform: none;
   padding: 20px 10px 20px 5px;
   cursor: default;
@@ -79,22 +81,32 @@ a {
 }
 
 .arena {
-  align-items: center;
+  z-index: 1;
+  position: absolute;
+  top: 100px;
+  right: 320px;
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
 }
 .arena img {
   margin-right: 0;
   padding: 0 0 0 0;
   filter: drop-shadow(0 0 0.5rem #ff00ff);
   max-width: 20vw;
-  max-height: 30vh;
-  vertical-align: bottom;
-  margin-left: auto;
 }
 .arena a {
-  padding-top: 10px;
+  line-height: normal;
+  text-transform: none;
+  font-size: 18pt;
+  align-self: center;
+}
+
+.arena p {
+  font-size: 12pt;
+  color: #ff00ff;
+  padding-bottom: 10px;
   align-self: flex-end;
+  line-height: normal;
 }
 
 @media (max-width: 1400px) {
@@ -136,13 +148,8 @@ a {
  }
 
 .arena img {
-  padding-top: 40px;
-  height: 300px;
-  margin: auto;
-}
-.arena a {
-  margin: auto;
-  padding-top: 0px;
+  top: auto;
+  max-height: 300px;
 }
 
 }

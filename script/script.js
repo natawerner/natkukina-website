@@ -43,6 +43,7 @@ function constFunction() {
   var x = document.getElementById("const");
   var text = document.getElementById("constText");
   var info = document.getElementById("constInfo");
+  var y = document.getElementById("const1");
   if (x.style.display === "none") {
     var content = document.createElement("img");
     content.src = "images/const/1.png";
@@ -50,15 +51,38 @@ function constFunction() {
     content.setAttribute("id","constimg");
     content.setAttribute("onclick","constImage()")
     x.style.display = "flex";
+    var close = document.createElement("p")
+    close.setAttribute("id","constClose")
+    close.innerHTML = "x";
+    close.setAttribute("onclick","closeConstFunction()");
+    info.appendChild(close);
     var arena = document.createElement("img");
     arena.src = constimages2[i2];
     info.appendChild(arena);
     arena.setAttribute("id","constimg2");
     arena.setAttribute("onclick","constImage2()")
+    var link = document.createElement("a");
+    link.href = "https://www.are.na/nat-kukina/please-assemble";
+    link.setAttribute("id","constLink")
+    link.target = "_blank";
+    link.innerHTML = "are.na";
+    info.appendChild(link);
   } else {
     x.style.display = "none";
     x.removeChild(constimg);
-    info.removeChild(constimg2);
+    y.removeChild(constInfo);
+  }
+}
+function closeConstFunction() {
+  var link = document.getElementById("constLink");
+  var img = document.getElementById("constimg2");
+  if (link.style.display === "flex") {
+    link.style.display = "none";
+    img.style.display = "none";
+  } else {
+    link.style.display = "flex";
+    img.style.display = "flex";
+
   }
 }
 
