@@ -108,7 +108,10 @@ a {
   .content img {
     max-width: 100%;
     margin-right: 0px;
+    padding-top: 20px;
     padding-bottom: 40px;
+    object-fit: contain;
+    align-self: center;
   }
   .content p {
     padding-right: 0px;
@@ -131,7 +134,7 @@ a {
  .info {
    flex-direction:column;
  }
- 
+
 .arena img {
   padding-top: 40px;
   height: 300px;
