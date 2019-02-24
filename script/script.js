@@ -41,8 +41,7 @@ function constFunction() {
     x.style.display = "flex";
   } else {
     x.style.display = "none";
-    var store = document.getElementById("const");
-    store.removeChild(constimg);
+    x.removeChild(constimg);
   }
 }
 
@@ -75,8 +74,7 @@ function imposterFunction() {
     x.style.display = "none";
     y.style.backgroundColor = "white";
     y.style.color = "black";
-    var store = document.getElementById("imposter");
-    store.removeChild(imposterimg);
+    x.removeChild(imposterimg);
   }
 }
 
@@ -98,9 +96,8 @@ var y = document.getElementById("interview1");
 if (x.style.display === "none") {
   var content = document.createElement("img");
   content.src = "images/interview/1.png";
-  var store = document.getElementById("interview");
   var text = document.getElementById("interviewText");
-  store.insertBefore(content, text);
+  x.insertBefore(content, text);
   content.setAttribute("id","interviewimg");
   content.setAttribute("onclick","interviewImage()")
   x.style.display = "flex";
@@ -110,8 +107,7 @@ if (x.style.display === "none") {
   x.style.display = "none";
   y.style.backgroundColor = "white";
   y.style.color = "black";
-  var store = document.getElementById("interview");
-  store.removeChild(interviewimg);
+  x.removeChild(interviewimg);
   }
 }
 /*Film club*/
@@ -129,16 +125,14 @@ function filmClubFunction() {
   if (x.style.display === "none") {
     var content = document.createElement("img");
     content.src = "images/filmclub/1.png";
-    var store = document.getElementById("filmClub");
     var text = document.getElementById("filmClubText");
-    store.insertBefore(content, text);
+    x.insertBefore(content, text);
     content.setAttribute("id","filmclubimg");
     content.setAttribute("onclick","filmclubImage()")
     x.style.display = "flex";
   } else {
     x.style.display = "none";
-    var store = document.getElementById("filmClub");
-    store.removeChild(filmclubimg);
+    x.removeChild(filmclubimg);
   }
 }
 
@@ -150,15 +144,13 @@ function silentVideoFunction() {
     video.src = 'https://cdn.glitch.com/2e0cf87a-999b-4b20-bf6a-2358bd8f52f0%2F1.mp4?1550940475371';
     video.autoplay = false;
     video.controls = true;
-    var silentVideo = document.getElementById("silentVideo")
     var text = document.getElementById("text0")
-    silentVideo.insertBefore(video, text)
+    x.insertBefore(video, text)
     video.setAttribute("id", "silentVideoVideo");
     x.style.display = "block";
   } else {
     x.style.display = "none";
-    var silentVideo = document.getElementById("silentVideo");
-    silentVideo.removeChild(silentVideoVideo);
+    x.removeChild(silentVideoVideo);
   }
 }
 
@@ -177,9 +169,8 @@ function calendarFunction() {
   if (x.style.display === "none") {
     var content = document.createElement("img");
     content.src = "images/calendar/1.png";
-    var store = document.getElementById("calendar");
     var text = document.getElementById("calendarText");
-    store.insertBefore(content, text);
+    x.insertBefore(content, text);
     content.setAttribute("id","calendarimg");
     content.setAttribute("onclick","calendarImage()")
     x.style.display = "flex";
@@ -205,16 +196,14 @@ function wysinawygFunction() {
   if (x.style.display === "none") {
     var content = document.createElement("img");
     content.src = "images/wysinawyg/1.png";
-    var store = document.getElementById("wysinawyg");
     var text = document.getElementById("wysinawygText");
-    store.insertBefore(content, text);
+    x.insertBefore(content, text);
     content.setAttribute("id","wysinawygimg");
     content.setAttribute("onclick","wysinawygImage()")
     x.style.display = "flex";
   } else {
     x.style.display = "none";
-    var store = document.getElementById("wysinawyg");
-    store.removeChild(wysinawygimg);
+    x.removeChild(wysinawygimg);
   }
 }
 
@@ -234,16 +223,14 @@ function lugemikFunction() {
   if (x.style.display === "none") {
     var content = document.createElement("img");
     content.src = "images/lugemik/1.png";
-    var store = document.getElementById("lugemik");
     var text = document.getElementById("lugemikText");
-    store.insertBefore(content, text);
+    x.insertBefore(content, text);
     content.setAttribute("id","lugemikimg");
     content.setAttribute("onclick","lugemikImage()")
     x.style.display = "flex";
   } else {
     x.style.display = "none";
-    var store = document.getElementById("lugemik");
-    store.removeChild(lugemikimg);
+    x.removeChild(lugemikimg);
   }
 }
 
@@ -263,9 +250,8 @@ function pregnancyFunction() {
   if (x.style.display === "none") {
     var content = document.createElement("img");
     content.src = "images/pregnancy/1.png";
-    var store = document.getElementById("pregnancy");
     var text = document.getElementById("pregnancyText");
-    store.insertBefore(content, text);
+    x.insertBefore(content, text);
     content.setAttribute("id","pregnancyimg");
     content.setAttribute("onclick","pregnancyImage()")
     x.style.display = "flex";
@@ -275,8 +261,7 @@ function pregnancyFunction() {
     x.style.display = "none";
     y.style.backgroundColor = "white";
     y.style.color = "black";
-    var store = document.getElementById("pregnancy");
-    store.removeChild(pregnancyimg);
+    x.removeChild(pregnancyimg);
   }
 }
 
@@ -288,15 +273,13 @@ function lollipopFunction() {
     video.src = 'https://cdn.glitch.com/2e0cf87a-999b-4b20-bf6a-2358bd8f52f0%2FCrushed%20lollipop%20VIP.mp4?1550950794348';
     video.autoplay = false;
     video.controls = true;
-    var lollipop = document.getElementById("lollipop");
     var text = document.getElementById("text2");
-    lollipop.insertBefore(video, text);
+    x.insertBefore(video, text);
     video.setAttribute("id", "lollipopVideo");
     x.style.display = "block";
   } else {
     x.style.display = "none";
-    var lollipop = document.getElementById("lollipop");
-    lollipop.removeChild(lollipopVideo);
+    x.removeChild(lollipopVideo);
   }
 }
 
@@ -315,16 +298,14 @@ function hyperFunction() {
   if (x.style.display === "none") {
     var content = document.createElement("img");
     content.src = "images/hyper/1.png";
-    var store = document.getElementById("hyper");
     var text = document.getElementById("hyperText");
-    store.insertBefore(content, text);
+    x.insertBefore(content, text);
     content.setAttribute("id","hyperimg");
     content.setAttribute("onclick","hyperImage()")
     x.style.display = "flex";
   } else {
     x.style.display = "none";
-    var store = document.getElementById("hyper");
-    store.removeChild(hyperimg);
+    x.removeChild(hyperimg);
   }
 }
 
@@ -333,8 +314,15 @@ function toteFunction() {
   var x = document.getElementById("tote");
   if (x.style.display === "none") {
     x.style.display = "flex";
+    var content = document.createElement("img");
+    content.src = "images/tote/1.jpg";
+    var text = document.getElementById("toteText");
+    x.insertBefore(content, text);
+    content.setAttribute("id","toteimg");
+    x.style.display = "flex";
   } else {
     x.style.display = "none";
+    x.removeChild(toteimg);
   }
 }
 
@@ -354,9 +342,8 @@ function fbFunction() {
   if (x.style.display === "none") {
     var content = document.createElement("img");
     content.src = "images/fb/1.jpg";
-    var store = document.getElementById("fb");
     var text = document.getElementById("fbText");
-    store.insertBefore(content, text);
+    x.insertBefore(content, text);
     content.setAttribute("id","fbimg");
     content.setAttribute("onclick","fbImage()")
     x.style.display = "flex";
@@ -366,7 +353,6 @@ function fbFunction() {
     x.style.display = "none";
     y.style.backgroundColor = "white";
     y.style.color = "black";
-    var store = document.getElementById("fb");
-    store.removeChild(fbimg);
+    x.removeChild(fbimg);
   }
 }

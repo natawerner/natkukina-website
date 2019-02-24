@@ -8,8 +8,6 @@ body {
   src: url('https://cdn.glitch.com/2e0cf87a-999b-4b20-bf6a-2358bd8f52f0%2Fpragmatica.ttf?1550441282993');
 }
 
-body {
-}
 a {
   color: #000000;
   text-decoration: none;
@@ -18,7 +16,7 @@ a {
 .project {
   z-index: 1;
   font-family: Pragmatica;
-  font-size: 72px;
+  font-size: 80px;
   line-height: 95%;
   text-transform: uppercase;
   padding: 5px 10px 5px 10px;
