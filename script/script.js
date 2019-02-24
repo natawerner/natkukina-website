@@ -2,14 +2,26 @@
 function contactsFunction() {
   var x = document.getElementById("asterisk");
   var y = document.getElementById("contacts");
-  if (x.style.display === "none") {
+  if (x.style.display === "block") {
+    x.style.display = "none";
+    y.style.display = "block"
+  } else {
     x.style.display = "block";
     y.style.display = "none";
+  }
+}
+function asteriskFunction() {
+  var x = document.getElementById("asterisk");
+  var y = document.getElementById("contacts");
+  if (x.style.display === "none") {
+  x.style.display = "block";
+  y.style.display = "none";
   } else {
     x.style.display = "none";
     y.style.display = "block"
   }
 }
+
 
 /*Menu items*/
 window.onload = function() {
@@ -43,48 +55,51 @@ function constFunction() {
   var x = document.getElementById("const");
   var text = document.getElementById("constText");
   var info = document.getElementById("constInfo");
-  var y = document.getElementById("const1");
   if (x.style.display === "none") {
+      var close = document.createElement("p");
+      close.setAttribute("id","constClose")
+      close.innerHTML="✕"
+      close.setAttribute("onclick","constCloseFunction()")
+      info.appendChild(close);
     var content = document.createElement("img");
     content.src = "images/const/1.png";
     x.insertBefore(content, text);
     content.setAttribute("id","constimg");
     content.setAttribute("onclick","constImage()")
     x.style.display = "flex";
-    var close = document.createElement("p")
-    close.setAttribute("id","constClose")
-    close.innerHTML = "x";
-    close.setAttribute("onclick","closeConstFunction()");
-    info.appendChild(close);
     var arena = document.createElement("img");
     arena.src = constimages2[i2];
     info.appendChild(arena);
     arena.setAttribute("id","constimg2");
     arena.setAttribute("onclick","constImage2()")
-    var link = document.createElement("a");
-    link.href = "https://www.are.na/nat-kukina/please-assemble";
-    link.setAttribute("id","constLink")
-    link.target = "_blank";
-    link.innerHTML = "are.na";
-    info.appendChild(link);
+      var link = document.createElement("a");
+      link.href = "https://www.are.na/nat-kukina/please-assemble";
+      link.setAttribute("id","constLink")
+      link.target = "_blank";
+      link.innerHTML = "are.na";
+      info.appendChild(link);
   } else {
     x.style.display = "none";
     x.removeChild(constimg);
-    y.removeChild(constInfo);
+    info.removeChild(constimg2);
+      info.removeChild(constLink);
+      info.removeChild(constClose);
   }
 }
-function closeConstFunction() {
+
+function constCloseFunction() {
   var link = document.getElementById("constLink");
   var img = document.getElementById("constimg2");
-  if (link.style.display === "flex") {
-    link.style.display = "none";
-    img.style.display = "none";
-  } else {
+  var close = document.createElement("p");
+  if (link.style.display === "none") {
     link.style.display = "flex";
     img.style.display = "flex";
-
+  } else {
+    link.style.display = "none";
+    img.style.display = "none";
   }
 }
+
 
 /*Imposter*/
 u = 0, imposterimages = ["images/imposter/1.png", "images/imposter/2.png", "images/imposter/3.png", "images/imposter/4.png", "images/imposter/5.png"];
@@ -113,6 +128,11 @@ function imposterFunction() {
   var text = document.getElementById("imposterText");
   var info = document.getElementById("imposterInfo");
   if (x.style.display === "none") {
+    var close = document.createElement("p");
+    close.setAttribute("id","imposterClose")
+    close.innerHTML="✕"
+    close.setAttribute("onclick","imposterCloseFunction()")
+    info.appendChild(close);
     var content = document.createElement("img");
     content.src = "images/imposter/1.png";
     var store = document.getElementById("imposter");
@@ -123,18 +143,40 @@ function imposterFunction() {
     x.style.display = "flex";
     y.style.backgroundColor = "black";
     y.style.color = "white";
-    document.getElementById("imposterLink").style.color = "white"
     var arena = document.createElement("img");
     arena.src = imposterimages2[u2];
     info.appendChild(arena);
     arena.setAttribute("id","imposterimg2");
     arena.setAttribute("onclick","imposterImage2()")
+    var link = document.createElement("a");
+    link.href = "https://www.are.na/lesya-kuranova/the-imposter-fmgcoxdwu70";
+    link.setAttribute("id","imposterLink")
+    link.target = "_blank";
+    link.innerHTML = "are.na";
+    info.appendChild(link);
+    document.getElementById("imposterLink").style.color = "white"
   } else {
     x.style.display = "none";
     y.style.backgroundColor = "white";
     y.style.color = "black";
     x.removeChild(imposterimg);
     info.removeChild(imposterimg2);
+    info.removeChild(imposterLink);
+    info.removeChild(imposterClose);
+  }
+}
+
+function imposterCloseFunction() {
+  var link = document.getElementById("imposterLink");
+  var img = document.getElementById("imposterimg2");
+  var close = document.createElement("p");
+  if (link.style.display === "none") {
+    link.style.display = "flex";
+    img.style.display = "flex";
+  } else {
+    link.style.display = "none";
+    img.style.display = "none";
+    close.innerHTML = "+"
   }
 }
 
@@ -165,6 +207,11 @@ var y = document.getElementById("interview1");
 var text = document.getElementById("interviewText");
 var info = document.getElementById("interviewInfo");
 if (x.style.display === "none") {
+  var close = document.createElement("p");
+  close.setAttribute("id","interviewClose")
+  close.innerHTML="✕"
+  close.setAttribute("onclick","interviewCloseFunction()")
+  info.appendChild(close);
   var content = document.createElement("img");
   content.src = "images/interview/1.png";
   var text = document.getElementById("interviewText");
@@ -174,18 +221,39 @@ if (x.style.display === "none") {
   x.style.display = "flex";
   y.style.backgroundColor = "black";
   y.style.color = "white";
-  document.getElementById("interviewLink").style.color = "white"
   var arena = document.createElement("img");
   arena.src = interviewimages2[z2];
   info.appendChild(arena);
   arena.setAttribute("id","interviewimg2");
   arena.setAttribute("onclick","interviewImage2()")
+  var link = document.createElement("a");
+  link.href = "https://www.are.na/nat-kukina/interview-ffz-7wqrxaq";
+  link.setAttribute("id","interviewLink")
+  link.target = "_blank";
+  link.innerHTML = "are.na";
+  info.appendChild(link);
+  document.getElementById("interviewLink").style.color = "white"
 } else {
   x.style.display = "none";
   y.style.backgroundColor = "white";
   y.style.color = "black";
   x.removeChild(interviewimg);
   info.removeChild(interviewimg2);
+  info.removeChild(interviewLink);
+  info.removeChild(interviewClose);
+  }
+}
+
+function interviewCloseFunction() {
+  var link = document.getElementById("interviewLink");
+  var img = document.getElementById("interviewimg2");
+  var close = document.createElement("p");
+  if (link.style.display === "none") {
+    link.style.display = "flex";
+    img.style.display = "flex";
+  } else {
+    link.style.display = "none";
+    img.style.display = "none";
   }
 }
 /*Film club*/
@@ -231,6 +299,11 @@ function silentVideoFunction() {
   var text = document.getElementById("silentVideoText");
   var info = document.getElementById("silentVideoInfo");
   if (x.style.display === "none") {
+    var close = document.createElement("p");
+    close.setAttribute("id","silentVideoClose")
+    close.innerHTML="✕"
+    close.setAttribute("onclick","silentVideoCloseFunction()")
+    info.appendChild(close);
     var video = document.createElement('video');
     video.src = 'https://cdn.glitch.com/2e0cf87a-999b-4b20-bf6a-2358bd8f52f0%2F1.mp4?1550940475371';
     video.autoplay = false;
@@ -243,10 +316,31 @@ function silentVideoFunction() {
     info.appendChild(arena);
     arena.setAttribute("id","silentVideoimg2");
     arena.setAttribute("onclick","silentVideoImage2()")
+    var link = document.createElement("a");
+    link.href = "https://www.are.na/nat-kukina/silent-video-upir_69b-we";
+    link.setAttribute("id","silentVideoLink")
+    link.target = "_blank";
+    link.innerHTML = "are.na";
+    info.appendChild(link);
   } else {
     x.style.display = "none";
     x.removeChild(silentVideoVideo);
-    info.removeChild(silentVideoImage2);
+    info.removeChild(silentVideoimg2);
+    info.removeChild(silentVideoLink);
+    info.removeChild(silentVideoClose);
+  }
+}
+
+function silentVideoCloseFunction() {
+  var link = document.getElementById("silentVideoLink");
+  var img = document.getElementById("silentVideoimg2");
+  var close = document.createElement("p");
+  if (link.style.display === "none") {
+    link.style.display = "flex";
+    img.style.display = "flex";
+  } else {
+    link.style.display = "none";
+    img.style.display = "none";
   }
 }
 
@@ -277,6 +371,11 @@ function calendarFunction() {
   var info = document.getElementById("calendarInfo");
   var randomItem = calendarimages2[Math.floor(Math.random()*calendarimages2.length)];
   if (x.style.display === "none") {
+    var close = document.createElement("p");
+    close.setAttribute("id","calendarClose")
+    close.innerHTML="✕"
+    close.setAttribute("onclick","calendarCloseFunction()")
+    info.appendChild(close);
     var content = document.createElement("img");
     content.src = "images/calendar/1.png";
     var text = document.getElementById("calendarText");
@@ -289,10 +388,31 @@ function calendarFunction() {
     info.appendChild(arena);
     arena.setAttribute("id","calendarimg2");
     arena.setAttribute("onclick","calendarImage2()")
+    var link = document.createElement("a");
+    link.href = "https://www.are.na/nat-kukina/silent-video-upir_69b-we";
+    link.setAttribute("id","calendarLink")
+    link.target = "_blank";
+    link.innerHTML = "are.na";
+    info.appendChild(link);
   } else {
     x.style.display = "none";
     x.removeChild(calendarimg);
     info.removeChild(calendarimg2);
+    info.removeChild(calendarLink);
+    info.removeChild(calendarClose);
+  }
+}
+
+function calendarCloseFunction() {
+  var link = document.getElementById("calendarLink");
+  var img = document.getElementById("calendarimg2");
+  var close = document.createElement("p");
+  if (link.style.display === "none") {
+    link.style.display = "flex";
+    img.style.display = "flex";
+  } else {
+    link.style.display = "none";
+    img.style.display = "none";
   }
 }
 
@@ -425,6 +545,11 @@ function hyperFunction() {
   var text = document.getElementById("hyperText");
   var info = document.getElementById("hyperInfo");
   if (x.style.display === "none") {
+    var close = document.createElement("p");
+    close.setAttribute("id","hyperClose")
+    close.innerHTML="✕"
+    close.setAttribute("onclick","hyperCloseFunction()")
+    info.appendChild(close);
     var content = document.createElement("img");
     content.src = "images/hyper/1.png";
     var text = document.getElementById("hyperText");
@@ -437,10 +562,32 @@ function hyperFunction() {
     info.appendChild(arena);
     arena.setAttribute("id","hyperimg2");
     arena.setAttribute("onclick","hyperImage2()")
+    var link = document.createElement("a");
+    link.href = "https://www.are.na/nat-kukina/hypergraphics-1519249736";
+    link.setAttribute("id","hyperLink")
+    link.target = "_blank";
+    link.innerHTML = "are.na";
+    info.appendChild(link);
+    link.style.color = "white";
   } else {
     x.style.display = "none";
     x.removeChild(hyperimg);
     info.removeChild(hyperimg2);
+    info.removeChild(hyperLink);
+    info.removeChild(hyperClose);
+  }
+}
+
+function hyperCloseFunction() {
+  var link = document.getElementById("hyperLink");
+  var img = document.getElementById("hyperimg2");
+  var close = document.createElement("p");
+  if (link.style.display === "none") {
+    link.style.display = "flex";
+    img.style.display = "flex";
+  } else {
+    link.style.display = "none";
+    img.style.display = "none";
   }
 }
 
@@ -488,6 +635,11 @@ function fbFunction() {
   var text = document.getElementById("fbText");
   var info = document.getElementById("fbInfo");
   if (x.style.display === "none") {
+    var close = document.createElement("p");
+    close.setAttribute("id","fbClose")
+    close.innerHTML="✕"
+    close.setAttribute("onclick","fbtCloseFunction()")
+    info.appendChild(close);
     var content = document.createElement("img");
     content.src = "images/fb/1.jpg";
     var text = document.getElementById("fbText");
@@ -497,17 +649,38 @@ function fbFunction() {
     x.style.display = "flex";
     y.style.backgroundColor = "black";
     y.style.color = "white";
-    document.getElementById("fbLink").style.color = "white"
     var arena = document.createElement("img");
     arena.src = fbimages2[fb2];
     info.appendChild(arena);
     arena.setAttribute("id","fbimg2");
     arena.setAttribute("onclick","fbImage2()")
+    var link = document.createElement("a");
+    link.href = "https://www.are.na/nat-kukina/index-1517475081";
+    link.setAttribute("id","fbLink")
+    link.target = "_blank";
+    link.innerHTML = "are.na";
+    info.appendChild(link);
+    document.getElementById("fbLink").style.color = "white"
   } else {
     x.style.display = "none";
     y.style.backgroundColor = "white";
     y.style.color = "black";
     x.removeChild(fbimg);
     info.removeChild(fbimg2);
+    info.removeChild(fbLink);
+    info.removeChild(fbClose);
+  }
+}
+
+function fbCloseFunction() {
+  var link = document.getElementById("fbLink");
+  var img = document.getElementById("fbimg2");
+  var close = document.createElement("p");
+  if (link.style.display === "none") {
+    link.style.display = "flex";
+    img.style.display = "flex";
+  } else {
+    link.style.display = "none";
+    img.style.display = "none";
   }
 }
