@@ -21,6 +21,7 @@ a {
   text-transform: uppercase;
   padding: 5px 10px 5px 10px;
   cursor: pointer;
+  max-width: 100%;
 }
 .contacts {
   z-index: 2;
@@ -47,6 +48,8 @@ a {
 .content img {
   filter: drop-shadow(0 0 0.5rem black);
   object-fit: contain;
+  max-width: 100%;
+  align-self: flex-start;
   max-height: 80vh;
   margin-right: 20px;
   cursor: e-resize;
@@ -59,7 +62,7 @@ a {
 }
 
 .content p {
-  max-width: 800px;
+  max-width: 600px;
 }
 
 #asterisk {
@@ -88,6 +91,7 @@ a {
     padding-bottom: 40px;
   }
   .content p {
+    padding-right: 0px;
     max-width: 100vw;
   }
   #contacts {
