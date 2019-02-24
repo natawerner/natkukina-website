@@ -81,6 +81,7 @@ a {
   max-width: 400px;
   max-height: 400px;
   vertical-align: bottom;
+  justify-content: space-between;
 }
 
 @media (max-width: 1400px) {
@@ -119,5 +120,6 @@ a {
  }
 .info img {
   padding-top: 20px;
+
 }
 }
