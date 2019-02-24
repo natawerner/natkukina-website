@@ -85,7 +85,7 @@ a {
 }
 .arena img {
   margin-right: 0;
-  padding: 0 0 0 20px;
+  padding: 0 0 0 0;
   filter: drop-shadow(0 0 0.5rem #ff00ff);
   max-width: 20vw;
   max-height: 30vh;
@@ -135,11 +135,11 @@ a {
   margin: auto;
  }
 .arena img {
-  padding-top: 20px;
+  padding-top: 40px;
   height: 300px;
 }
 .arena a {
-  text-align: center;
+  align-self: center;
   padding-top: 0px;
 }
 
