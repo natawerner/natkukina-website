@@ -28,7 +28,8 @@ function constImage() {
     }
     document.getElementById('constimg').src = constimages[i];}
 
-i2 = 0, constimages2 = ["images/const/arena/1.jpg", "images/const/arena/2.jpg", "images/const/arena/3.jpg", "images/const/arena/4.jpg", "images/const/arena/5.jpg", "images/const/arena/6.jpg", "images/const/arena/7.jpg"];
+constimages2 = ["images/const/arena/1.jpg", "images/const/arena/2.jpg", "images/const/arena/3.jpg", "images/const/arena/4.jpg", "images/const/arena/5.jpg", "images/const/arena/6.jpg", "images/const/arena/7.jpg"];
+i2 = Math.floor(Math.random()*constimages2.length);
 function constImage2() {
   if (i2 < constimages2.length-1) {
    i2++;
@@ -42,7 +43,6 @@ function constFunction() {
   var x = document.getElementById("const");
   var text = document.getElementById("constText");
   var info = document.getElementById("constInfo");
-  var randomItem = constimages2[Math.floor(Math.random()*constimages2.length)];
   if (x.style.display === "none") {
     var content = document.createElement("img");
     content.src = "images/const/1.png";
@@ -51,7 +51,7 @@ function constFunction() {
     content.setAttribute("onclick","constImage()")
     x.style.display = "flex";
     var arena = document.createElement("img");
-    arena.src = randomItem;
+    arena.src = constimages2[i2];
     info.appendChild(arena);
     arena.setAttribute("id","constimg2");
     arena.setAttribute("onclick","constImage2()")
@@ -72,7 +72,8 @@ function imposterImage() {
     }
     document.getElementById('imposterimg').src = imposterimages[u];
 }
-u2 = 0, imposterimages2 = ["images/imposter/arena/1.jpg", "images/imposter/arena/2.jpg", "images/imposter/arena/3.jpg", "images/imposter/arena/4.jpg", "images/imposter/arena/5.png", "images/imposter/arena/6.jpg", "images/imposter/arena/7.png"];
+imposterimages2 = ["images/imposter/arena/1.jpg", "images/imposter/arena/2.jpg", "images/imposter/arena/3.jpg", "images/imposter/arena/4.jpg", "images/imposter/arena/5.png", "images/imposter/arena/6.jpg", "images/imposter/arena/7.png"];
+u2 = Math.floor(Math.random()*imposterimages2.length);
 function imposterImage2() {
   if (u2 < imposterimages2.length-1) {
    u2++;
@@ -87,7 +88,6 @@ function imposterFunction() {
   var y = document.getElementById("imposter1");
   var text = document.getElementById("imposterText");
   var info = document.getElementById("imposterInfo");
-  var randomItem = imposterimages2[Math.floor(Math.random()*imposterimages2.length)];
   if (x.style.display === "none") {
     var content = document.createElement("img");
     content.src = "images/imposter/1.png";
@@ -101,7 +101,7 @@ function imposterFunction() {
     y.style.color = "white";
     document.getElementById("imposterLink").style.color = "white"
     var arena = document.createElement("img");
-    arena.src = randomItem;
+    arena.src = imposterimages2[u2];
     info.appendChild(arena);
     arena.setAttribute("id","imposterimg2");
     arena.setAttribute("onclick","imposterImage2()")
@@ -110,12 +110,12 @@ function imposterFunction() {
     y.style.backgroundColor = "white";
     y.style.color = "black";
     x.removeChild(imposterimg);
+    info.removeChild(imposterimg2);
   }
 }
 
 /*Interview*/
 z = 0, interviewimages = ["images/interview/1.png", "images/interview/2.png", "images/interview/3.png", "images/interview/4.png"];
-
 function interviewImage() {
   if (z < interviewimages.length-1) {
    z++;
@@ -124,10 +124,22 @@ function interviewImage() {
     }
     document.getElementById('interviewimg').src = interviewimages[z];
 }
+interviewimages2 = ["images/interview/arena/1.jpg", "images/interview/arena/2.jpg", "images/interview/arena/3.jpg", "images/interview/arena/4.png", "images/interview/arena/5.jpg"];
+z2 = Math.floor(Math.random()*interviewimages2.length);
+function interviewImage2() {
+    if (z2 < interviewimages2.length-1) {
+      z2++;
+      } else {
+        z2 = 0;
+    }
+    document.getElementById('interviewimg2').src = interviewimages2[z2];
+}
 
 function interviewFunction() {
 var x = document.getElementById("interview");
 var y = document.getElementById("interview1");
+var text = document.getElementById("interviewText");
+var info = document.getElementById("interviewInfo");
 if (x.style.display === "none") {
   var content = document.createElement("img");
   content.src = "images/interview/1.png";
@@ -138,11 +150,18 @@ if (x.style.display === "none") {
   x.style.display = "flex";
   y.style.backgroundColor = "black";
   y.style.color = "white";
+  document.getElementById("interviewLink").style.color = "white"
+  var arena = document.createElement("img");
+  arena.src = interviewimages2[z2];
+  info.appendChild(arena);
+  arena.setAttribute("id","interviewimg2");
+  arena.setAttribute("onclick","interviewImage2()")
 } else {
   x.style.display = "none";
   y.style.backgroundColor = "white";
   y.style.color = "black";
   x.removeChild(interviewimg);
+  info.removeChild(interviewimg2);
   }
 }
 /*Film club*/
@@ -172,20 +191,38 @@ function filmClubFunction() {
 }
 
 /*Silent video*/
+silentVideoimages2 = ["images/silentVideo/1.png", "images/silentVideo/2.jpg", "images/silentVideo/3.jpg", "images/silentVideo/4.gif", "images/silentVideo/5.jpg"];
+s2 = Math.floor(Math.random()*silentVideoimages2.length);
+function silentVideoImage2() {
+    if (s2 < silentVideoimages2.length-1) {
+      s2++;
+      } else {
+        s2 = 0;
+    }
+    document.getElementById('silentVideoimg2').src = silentVideoimages2[s2];
+}
+
 function silentVideoFunction() {
   var x = document.getElementById("silentVideo");
+  var text = document.getElementById("silentVideoText");
+  var info = document.getElementById("silentVideoInfo");
   if (x.style.display === "none") {
     var video = document.createElement('video');
     video.src = 'https://cdn.glitch.com/2e0cf87a-999b-4b20-bf6a-2358bd8f52f0%2F1.mp4?1550940475371';
     video.autoplay = false;
     video.controls = true;
-    var text = document.getElementById("text0")
     x.insertBefore(video, text)
     video.setAttribute("id", "silentVideoVideo");
     x.style.display = "block";
+    var arena = document.createElement("img");
+    arena.src = silentVideoimages2[s2];
+    info.appendChild(arena);
+    arena.setAttribute("id","silentVideoimg2");
+    arena.setAttribute("onclick","silentVideoImage2()")
   } else {
     x.style.display = "none";
     x.removeChild(silentVideoVideo);
+    info.removeChild(silentVideoImage2);
   }
 }
 
@@ -199,8 +236,22 @@ function calendarImage() {
     }
     document.getElementById('calendarimg').src = calendarimages[c];
 }
+
+c2 = 0, calendarimages2 = ["images/calendar/arena/1.jpg", "images/calendar/arena/2.jpg"];
+function calendarImage2() {
+  if (c2 < calendarimages.length-1) {
+   c2++;
+    } else {
+      c2 = 0;
+    }
+    document.getElementById('calendarimg2').src = calendarimages2[c2];
+}
+
 function calendarFunction() {
   var x = document.getElementById("calendar");
+  var text = document.getElementById("calendarText");
+  var info = document.getElementById("calendarInfo");
+  var randomItem = calendarimages2[Math.floor(Math.random()*calendarimages2.length)];
   if (x.style.display === "none") {
     var content = document.createElement("img");
     content.src = "images/calendar/1.png";
@@ -209,10 +260,15 @@ function calendarFunction() {
     content.setAttribute("id","calendarimg");
     content.setAttribute("onclick","calendarImage()")
     x.style.display = "flex";
+    var arena = document.createElement("img");
+    arena.src = randomItem;
+    info.appendChild(arena);
+    arena.setAttribute("id","calendarimg2");
+    arena.setAttribute("onclick","calendarImage2()")
   } else {
     x.style.display = "none";
-    var store = document.getElementById("calendar");
-    store.removeChild(calendarimg);
+    x.removeChild(calendarimg);
+    info.removeChild(calendarimg2);
   }
 }
 
@@ -328,8 +384,22 @@ function hyperImage() {
     }
     document.getElementById('hyperimg').src = hyperimages[h];
 }
+
+hyperimages2 = ["images/hyper/arena/1.jpg", "images/hyper/arena/2.jpg", "images/hyper/arena/3.png", "images/hyper/arena/4.jpg", "images/hyper/arena/5.jpg", "images/hyper/arena/6.jpg"];
+h2 = Math.floor(Math.random()*hyperimages2.length);
+function hyperImage2() {
+  if (h2 < hyperimages2.length-1) {
+   h2++;
+    } else {
+      h2 = 0;
+    }
+    document.getElementById('hyperimg2').src = hyperimages2[h2];
+}
+
 function hyperFunction() {
   var x = document.getElementById("hyper");
+  var text = document.getElementById("hyperText");
+  var info = document.getElementById("hyperInfo");
   if (x.style.display === "none") {
     var content = document.createElement("img");
     content.src = "images/hyper/1.png";
@@ -338,9 +408,15 @@ function hyperFunction() {
     content.setAttribute("id","hyperimg");
     content.setAttribute("onclick","hyperImage()")
     x.style.display = "flex";
+    var arena = document.createElement("img");
+    arena.src = hyperimages2[h2];
+    info.appendChild(arena);
+    arena.setAttribute("id","hyperimg2");
+    arena.setAttribute("onclick","hyperImage2()")
   } else {
     x.style.display = "none";
     x.removeChild(hyperimg);
+    info.removeChild(hyperimg2);
   }
 }
 
@@ -371,9 +447,22 @@ function fbImage() {
     }
     document.getElementById('fbimg').src = fbimages[fb];
 }
+fbimages2 = ["images/fb/arena/1.png", "images/fb/arena/2.png", "images/fb/arena/3.jpg", "images/fb/arena/4.png", "images/fb/arena/5.jpg"];
+fb2 = Math.floor(Math.random()*fbimages2.length);
+function fbImage2() {
+  if (fb2 < fbimages2.length-1) {
+   fb2++;
+    } else {
+      fb2 = 0;
+    }
+    document.getElementById('fbimg2').src = fbimages2[fb2];
+}
+
 function fbFunction() {
   var x = document.getElementById("fb");
   var y = document.getElementById("fb1");
+  var text = document.getElementById("fbText");
+  var info = document.getElementById("fbInfo");
   if (x.style.display === "none") {
     var content = document.createElement("img");
     content.src = "images/fb/1.jpg";
@@ -384,10 +473,17 @@ function fbFunction() {
     x.style.display = "flex";
     y.style.backgroundColor = "black";
     y.style.color = "white";
+    document.getElementById("fbLink").style.color = "white"
+    var arena = document.createElement("img");
+    arena.src = fbimages2[fb2];
+    info.appendChild(arena);
+    arena.setAttribute("id","fbimg2");
+    arena.setAttribute("onclick","fbImage2()")
   } else {
     x.style.display = "none";
     y.style.backgroundColor = "white";
     y.style.color = "black";
     x.removeChild(fbimg);
+    info.removeChild(fbimg2);
   }
 }
