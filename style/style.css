@@ -93,7 +93,7 @@ a {
   margin-left: auto;
 }
 .arena a {
-  padding-bottom: 10px;
+  padding-top: 10px;
   align-self: flex-end;
 }
 
@@ -139,7 +139,8 @@ a {
   height: 300px;
 }
 .arena a {
-  padding-top: 40px;
+  text-align: center;
+  padding-top: 0px;
 }
 
 }
