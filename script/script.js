@@ -46,7 +46,7 @@ function constFunction() {
 }
 
 /*Imposter*/
-u = 0, imposterimages = ["images/imposter/1.png", "images/imposter/2.png", "images/imposter/31.jpg", "images/imposter/32.jpg", "images/imposter/41.jpg", "images/imposter/42.jpg", "images/imposter/51.jpg", "images/imposter/52.jpg"];
+u = 0, imposterimages = ["images/imposter/1.png", "images/imposter/2.png", "images/imposter/3.png", "images/imposter/4.png", "images/imposter/5.png"];
 
 function imposterImage() {
   if (u < imposterimages.length-1) {
