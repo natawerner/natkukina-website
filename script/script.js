@@ -31,7 +31,7 @@ window.onload = function() {
   };
 
 /*Constitution*/
-i = 0, constimages = ["images/const/1.png", "images/const/2.gif", "images/const/3.png"];
+i = 0, constimages = ["images/const/1.png", "images/const/2.gif", "images/const/3.png", "images/const/4.png", "images/const/5.png", "images/const/6.jpg"];
 function constImage() {
   if (i < constimages.length-1) {
    i++;
@@ -154,7 +154,6 @@ function imposterFunction() {
     link.target = "_blank";
     link.innerHTML = "are.na";
     info.appendChild(link);
-    document.getElementById("imposterLink").style.color = "white"
   } else {
     x.style.display = "none";
     y.style.backgroundColor = "white";
@@ -232,7 +231,6 @@ if (x.style.display === "none") {
   link.target = "_blank";
   link.innerHTML = "are.na";
   info.appendChild(link);
-  document.getElementById("interviewLink").style.color = "white"
 } else {
   x.style.display = "none";
   y.style.backgroundColor = "white";
@@ -638,7 +636,7 @@ function fbFunction() {
     var close = document.createElement("p");
     close.setAttribute("id","fbClose")
     close.innerHTML="✕"
-    close.setAttribute("onclick","fbtCloseFunction()")
+    close.setAttribute("onclick","fbCloseFunction()")
     info.appendChild(close);
     var content = document.createElement("img");
     content.src = "images/fb/1.jpg";
@@ -660,7 +658,6 @@ function fbFunction() {
     link.target = "_blank";
     link.innerHTML = "are.na";
     info.appendChild(link);
-    document.getElementById("fbLink").style.color = "white"
   } else {
     x.style.display = "none";
     y.style.backgroundColor = "white";
