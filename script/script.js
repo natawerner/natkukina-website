@@ -283,7 +283,7 @@ function filmClubFunction() {
 }
 
 /*Silent video*/
-silentVideoimages2 = ["images/silentVideo/1.png", "images/silentVideo/2.jpg", "images/silentVideo/3.jpg", "images/silentVideo/4.gif", "images/silentVideo/5.jpg"];
+silentVideoimages2 = ["images/silentvideo/1.png", "images/silentvideo/2.jpg", "images/silentvideo/3.jpg", "images/silentvideo/4.gif", "images/silentvideo/5.jpg"];
 s2 = Math.floor(Math.random()*silentVideoimages2.length);
 function silentVideoImage2() {
     if (s2 < silentVideoimages2.length-1) {
