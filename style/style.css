@@ -113,7 +113,7 @@ a {
   line-height: normal;
 }
 
-@media (max-width: 1400px) {
+@media (max-width: 1000px) {
   .project {
     padding: 15px;
   }
