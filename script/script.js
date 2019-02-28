@@ -56,11 +56,6 @@ function constFunction() {
   var text = document.getElementById("constText");
   var info = document.getElementById("constInfo");
   if (x.style.display === "none") {
-      var close = document.createElement("p");
-      close.setAttribute("id","constClose")
-      close.innerHTML="✕"
-      close.setAttribute("onclick","constCloseFunction()")
-      info.appendChild(close);
     var content = document.createElement("img");
     content.src = "images/const/1.png";
     x.insertBefore(content, text);
@@ -78,25 +73,57 @@ function constFunction() {
       link.target = "_blank";
       link.innerHTML = "are.na";
       info.appendChild(link);
+      //TO DRAG CONTAINERS //
+      info.style.top = "40px";
+      info.style.left = "50vw";
+dragElement(document.getElementById("constInfo"));
+
+function dragElement(elmnt) {
+var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+if (document.getElementById(elmnt.id)) {
+// if present, the header is where you move the DIV from:
+document.getElementById(elmnt.id).onmousedown = dragMouseDown;
+} else {
+// otherwise, move the DIV from anywhere inside the DIV:
+elmnt.onmousedown = dragMouseDown;
+}
+
+function dragMouseDown(e) {
+e = e || window.event;
+e.preventDefault();
+// get the mouse cursor position at startup:
+pos3 = e.clientX;
+pos4 = e.clientY;
+document.onmouseup = closeDragElement;
+// call a function whenever the cursor moves:
+document.onmousemove = elementDrag;
+}
+
+function elementDrag(e) {
+e = e || window.event;
+e.preventDefault();
+// calculate the new cursor position:
+pos1 = pos3 - e.clientX;
+pos2 = pos4 - e.clientY;
+pos3 = e.clientX;
+pos4 = e.clientY;
+// set the element's new position:
+elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+}
+
+function closeDragElement() {
+// stop moving when mouse button is released:
+document.onmouseup = null;
+document.onmousemove = null;
+}
+}
+//drag end//
   } else {
     x.style.display = "none";
     x.removeChild(constimg);
     info.removeChild(constimg2);
       info.removeChild(constLink);
-      info.removeChild(constClose);
-  }
-}
-
-function constCloseFunction() {
-  var link = document.getElementById("constLink");
-  var img = document.getElementById("constimg2");
-  var close = document.createElement("p");
-  if (link.style.display === "none") {
-    link.style.display = "flex";
-    img.style.display = "flex";
-  } else {
-    link.style.display = "none";
-    img.style.display = "none";
   }
 }
 
@@ -128,11 +155,6 @@ function imposterFunction() {
   var text = document.getElementById("imposterText");
   var info = document.getElementById("imposterInfo");
   if (x.style.display === "none") {
-    var close = document.createElement("p");
-    close.setAttribute("id","imposterClose")
-    close.innerHTML="✕"
-    close.setAttribute("onclick","imposterCloseFunction()")
-    info.appendChild(close);
     var content = document.createElement("img");
     content.src = "images/imposter/1.png";
     var store = document.getElementById("imposter");
@@ -154,6 +176,52 @@ function imposterFunction() {
     link.target = "_blank";
     link.innerHTML = "are.na";
     info.appendChild(link);
+    //TO DRAG CONTAINERS //
+    info.style.top = "40px";
+    info.style.left = "50vw";
+dragElement(document.getElementById("imposterInfo"));
+
+function dragElement(elmnt) {
+var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+if (document.getElementById(elmnt.id)) {
+// if present, the header is where you move the DIV from:
+document.getElementById(elmnt.id).onmousedown = dragMouseDown;
+} else {
+// otherwise, move the DIV from anywhere inside the DIV:
+elmnt.onmousedown = dragMouseDown;
+}
+
+function dragMouseDown(e) {
+e = e || window.event;
+e.preventDefault();
+// get the mouse cursor position at startup:
+pos3 = e.clientX;
+pos4 = e.clientY;
+document.onmouseup = closeDragElement;
+// call a function whenever the cursor moves:
+document.onmousemove = elementDrag;
+}
+
+function elementDrag(e) {
+e = e || window.event;
+e.preventDefault();
+// calculate the new cursor position:
+pos1 = pos3 - e.clientX;
+pos2 = pos4 - e.clientY;
+pos3 = e.clientX;
+pos4 = e.clientY;
+// set the element's new position:
+elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+}
+
+function closeDragElement() {
+// stop moving when mouse button is released:
+document.onmouseup = null;
+document.onmousemove = null;
+}
+}
+//drag end//
   } else {
     x.style.display = "none";
     y.style.backgroundColor = "white";
@@ -161,21 +229,6 @@ function imposterFunction() {
     x.removeChild(imposterimg);
     info.removeChild(imposterimg2);
     info.removeChild(imposterLink);
-    info.removeChild(imposterClose);
-  }
-}
-
-function imposterCloseFunction() {
-  var link = document.getElementById("imposterLink");
-  var img = document.getElementById("imposterimg2");
-  var close = document.createElement("p");
-  if (link.style.display === "none") {
-    link.style.display = "flex";
-    img.style.display = "flex";
-  } else {
-    link.style.display = "none";
-    img.style.display = "none";
-    close.innerHTML = "+"
   }
 }
 
@@ -206,11 +259,6 @@ var y = document.getElementById("interview1");
 var text = document.getElementById("interviewText");
 var info = document.getElementById("interviewInfo");
 if (x.style.display === "none") {
-  var close = document.createElement("p");
-  close.setAttribute("id","interviewClose")
-  close.innerHTML="✕"
-  close.setAttribute("onclick","interviewCloseFunction()")
-  info.appendChild(close);
   var content = document.createElement("img");
   content.src = "images/interview/1.png";
   var text = document.getElementById("interviewText");
@@ -231,6 +279,52 @@ if (x.style.display === "none") {
   link.target = "_blank";
   link.innerHTML = "are.na";
   info.appendChild(link);
+  //TO DRAG CONTAINERS //
+  info.style.top = "40px";
+  info.style.left = "50vw";
+dragElement(document.getElementById("interviewInfo"));
+
+function dragElement(elmnt) {
+var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+if (document.getElementById(elmnt.id)) {
+// if present, the header is where you move the DIV from:
+document.getElementById(elmnt.id).onmousedown = dragMouseDown;
+} else {
+// otherwise, move the DIV from anywhere inside the DIV:
+elmnt.onmousedown = dragMouseDown;
+}
+
+function dragMouseDown(e) {
+e = e || window.event;
+e.preventDefault();
+// get the mouse cursor position at startup:
+pos3 = e.clientX;
+pos4 = e.clientY;
+document.onmouseup = closeDragElement;
+// call a function whenever the cursor moves:
+document.onmousemove = elementDrag;
+}
+
+function elementDrag(e) {
+e = e || window.event;
+e.preventDefault();
+// calculate the new cursor position:
+pos1 = pos3 - e.clientX;
+pos2 = pos4 - e.clientY;
+pos3 = e.clientX;
+pos4 = e.clientY;
+// set the element's new position:
+elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+}
+
+function closeDragElement() {
+// stop moving when mouse button is released:
+document.onmouseup = null;
+document.onmousemove = null;
+}
+}
+//drag end//
 } else {
   x.style.display = "none";
   y.style.backgroundColor = "white";
@@ -238,22 +332,9 @@ if (x.style.display === "none") {
   x.removeChild(interviewimg);
   info.removeChild(interviewimg2);
   info.removeChild(interviewLink);
-  info.removeChild(interviewClose);
   }
 }
 
-function interviewCloseFunction() {
-  var link = document.getElementById("interviewLink");
-  var img = document.getElementById("interviewimg2");
-  var close = document.createElement("p");
-  if (link.style.display === "none") {
-    link.style.display = "flex";
-    img.style.display = "flex";
-  } else {
-    link.style.display = "none";
-    img.style.display = "none";
-  }
-}
 /*Film club*/
 f = 0, filmclubimages = ["images/filmclub/1.png", "images/filmclub/2.png", "images/filmclub/3.png", "images/filmclub/4.png"];
 function filmclubImage() {
@@ -297,11 +378,6 @@ function silentVideoFunction() {
   var text = document.getElementById("silentVideoText");
   var info = document.getElementById("silentVideoInfo");
   if (x.style.display === "none") {
-    var close = document.createElement("p");
-    close.setAttribute("id","silentVideoClose")
-    close.innerHTML="✕"
-    close.setAttribute("onclick","silentVideoCloseFunction()")
-    info.appendChild(close);
     var video = document.createElement('video');
     video.src = 'https://cdn.glitch.com/2e0cf87a-999b-4b20-bf6a-2358bd8f52f0%2F1.mp4?1550940475371';
     video.autoplay = false;
@@ -320,25 +396,57 @@ function silentVideoFunction() {
     link.target = "_blank";
     link.innerHTML = "are.na";
     info.appendChild(link);
+    //TO DRAG CONTAINERS //
+    info.style.top = "40px";
+    info.style.left = "50vw";
+dragElement(document.getElementById("silentVideoInfo"));
+
+function dragElement(elmnt) {
+var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+if (document.getElementById(elmnt.id)) {
+// if present, the header is where you move the DIV from:
+document.getElementById(elmnt.id).onmousedown = dragMouseDown;
+} else {
+// otherwise, move the DIV from anywhere inside the DIV:
+elmnt.onmousedown = dragMouseDown;
+}
+
+function dragMouseDown(e) {
+e = e || window.event;
+e.preventDefault();
+// get the mouse cursor position at startup:
+pos3 = e.clientX;
+pos4 = e.clientY;
+document.onmouseup = closeDragElement;
+// call a function whenever the cursor moves:
+document.onmousemove = elementDrag;
+}
+
+function elementDrag(e) {
+e = e || window.event;
+e.preventDefault();
+// calculate the new cursor position:
+pos1 = pos3 - e.clientX;
+pos2 = pos4 - e.clientY;
+pos3 = e.clientX;
+pos4 = e.clientY;
+// set the element's new position:
+elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+}
+
+function closeDragElement() {
+// stop moving when mouse button is released:
+document.onmouseup = null;
+document.onmousemove = null;
+}
+}
+//drag end//
   } else {
     x.style.display = "none";
     x.removeChild(silentVideoVideo);
     info.removeChild(silentVideoimg2);
     info.removeChild(silentVideoLink);
-    info.removeChild(silentVideoClose);
-  }
-}
-
-function silentVideoCloseFunction() {
-  var link = document.getElementById("silentVideoLink");
-  var img = document.getElementById("silentVideoimg2");
-  var close = document.createElement("p");
-  if (link.style.display === "none") {
-    link.style.display = "flex";
-    img.style.display = "flex";
-  } else {
-    link.style.display = "none";
-    img.style.display = "none";
   }
 }
 
@@ -369,11 +477,6 @@ function calendarFunction() {
   var info = document.getElementById("calendarInfo");
   var randomItem = calendarimages2[Math.floor(Math.random()*calendarimages2.length)];
   if (x.style.display === "none") {
-    var close = document.createElement("p");
-    close.setAttribute("id","calendarClose")
-    close.innerHTML="✕"
-    close.setAttribute("onclick","calendarCloseFunction()")
-    info.appendChild(close);
     var content = document.createElement("img");
     content.src = "images/calendar/1.png";
     var text = document.getElementById("calendarText");
@@ -392,27 +495,60 @@ function calendarFunction() {
     link.target = "_blank";
     link.innerHTML = "are.na";
     info.appendChild(link);
+    //TO DRAG CONTAINERS //
+    info.style.top = "40px";
+    info.style.left = "50vw";
+dragElement(document.getElementById("calendarInfo"));
+
+function dragElement(elmnt) {
+var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+if (document.getElementById(elmnt.id)) {
+// if present, the header is where you move the DIV from:
+document.getElementById(elmnt.id).onmousedown = dragMouseDown;
+} else {
+// otherwise, move the DIV from anywhere inside the DIV:
+elmnt.onmousedown = dragMouseDown;
+}
+
+function dragMouseDown(e) {
+e = e || window.event;
+e.preventDefault();
+// get the mouse cursor position at startup:
+pos3 = e.clientX;
+pos4 = e.clientY;
+document.onmouseup = closeDragElement;
+// call a function whenever the cursor moves:
+document.onmousemove = elementDrag;
+}
+
+function elementDrag(e) {
+e = e || window.event;
+e.preventDefault();
+// calculate the new cursor position:
+pos1 = pos3 - e.clientX;
+pos2 = pos4 - e.clientY;
+pos3 = e.clientX;
+pos4 = e.clientY;
+// set the element's new position:
+elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+}
+
+function closeDragElement() {
+// stop moving when mouse button is released:
+document.onmouseup = null;
+document.onmousemove = null;
+}
+}
+//drag end//
   } else {
     x.style.display = "none";
     x.removeChild(calendarimg);
     info.removeChild(calendarimg2);
     info.removeChild(calendarLink);
-    info.removeChild(calendarClose);
   }
 }
 
-function calendarCloseFunction() {
-  var link = document.getElementById("calendarLink");
-  var img = document.getElementById("calendarimg2");
-  var close = document.createElement("p");
-  if (link.style.display === "none") {
-    link.style.display = "flex";
-    img.style.display = "flex";
-  } else {
-    link.style.display = "none";
-    img.style.display = "none";
-  }
-}
 
 /*WYSINAWYG*/
 w = 0, wysinawygimages = ["images/wysinawyg/1.png", "images/wysinawyg/2.png", "images/wysinawyg/3.png", "images/wysinawyg/4.png"];
@@ -543,11 +679,6 @@ function hyperFunction() {
   var text = document.getElementById("hyperText");
   var info = document.getElementById("hyperInfo");
   if (x.style.display === "none") {
-    var close = document.createElement("p");
-    close.setAttribute("id","hyperClose")
-    close.innerHTML="✕"
-    close.setAttribute("onclick","hyperCloseFunction()")
-    info.appendChild(close);
     var content = document.createElement("img");
     content.src = "images/hyper/1.png";
     var text = document.getElementById("hyperText");
@@ -566,26 +697,57 @@ function hyperFunction() {
     link.target = "_blank";
     link.innerHTML = "are.na";
     info.appendChild(link);
-    link.style.color = "white";
+    //TO DRAG CONTAINERS //
+    info.style.top = "40px";
+    info.style.left = "50vw";
+dragElement(document.getElementById("hyperInfo"));
+
+function dragElement(elmnt) {
+var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+if (document.getElementById(elmnt.id)) {
+// if present, the header is where you move the DIV from:
+document.getElementById(elmnt.id).onmousedown = dragMouseDown;
+} else {
+// otherwise, move the DIV from anywhere inside the DIV:
+elmnt.onmousedown = dragMouseDown;
+}
+
+function dragMouseDown(e) {
+e = e || window.event;
+e.preventDefault();
+// get the mouse cursor position at startup:
+pos3 = e.clientX;
+pos4 = e.clientY;
+document.onmouseup = closeDragElement;
+// call a function whenever the cursor moves:
+document.onmousemove = elementDrag;
+}
+
+function elementDrag(e) {
+e = e || window.event;
+e.preventDefault();
+// calculate the new cursor position:
+pos1 = pos3 - e.clientX;
+pos2 = pos4 - e.clientY;
+pos3 = e.clientX;
+pos4 = e.clientY;
+// set the element's new position:
+elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+}
+
+function closeDragElement() {
+// stop moving when mouse button is released:
+document.onmouseup = null;
+document.onmousemove = null;
+}
+}
+//drag end//
   } else {
     x.style.display = "none";
     x.removeChild(hyperimg);
     info.removeChild(hyperimg2);
     info.removeChild(hyperLink);
-    info.removeChild(hyperClose);
-  }
-}
-
-function hyperCloseFunction() {
-  var link = document.getElementById("hyperLink");
-  var img = document.getElementById("hyperimg2");
-  var close = document.createElement("p");
-  if (link.style.display === "none") {
-    link.style.display = "flex";
-    img.style.display = "flex";
-  } else {
-    link.style.display = "none";
-    img.style.display = "none";
   }
 }
 
@@ -633,11 +795,6 @@ function fbFunction() {
   var text = document.getElementById("fbText");
   var info = document.getElementById("fbInfo");
   if (x.style.display === "none") {
-    var close = document.createElement("p");
-    close.setAttribute("id","fbClose")
-    close.innerHTML="✕"
-    close.setAttribute("onclick","fbCloseFunction()")
-    info.appendChild(close);
     var content = document.createElement("img");
     content.src = "images/fb/1.jpg";
     var text = document.getElementById("fbText");
@@ -658,6 +815,52 @@ function fbFunction() {
     link.target = "_blank";
     link.innerHTML = "are.na";
     info.appendChild(link);
+    //TO DRAG CONTAINERS //
+    info.style.top = "40px";
+    info.style.left = "50vw";
+dragElement(document.getElementById("fbInfo"));
+
+function dragElement(elmnt) {
+var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+if (document.getElementById(elmnt.id)) {
+// if present, the header is where you move the DIV from:
+document.getElementById(elmnt.id).onmousedown = dragMouseDown;
+} else {
+// otherwise, move the DIV from anywhere inside the DIV:
+elmnt.onmousedown = dragMouseDown;
+}
+
+function dragMouseDown(e) {
+e = e || window.event;
+e.preventDefault();
+// get the mouse cursor position at startup:
+pos3 = e.clientX;
+pos4 = e.clientY;
+document.onmouseup = closeDragElement;
+// call a function whenever the cursor moves:
+document.onmousemove = elementDrag;
+}
+
+function elementDrag(e) {
+e = e || window.event;
+e.preventDefault();
+// calculate the new cursor position:
+pos1 = pos3 - e.clientX;
+pos2 = pos4 - e.clientY;
+pos3 = e.clientX;
+pos4 = e.clientY;
+// set the element's new position:
+elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+}
+
+function closeDragElement() {
+// stop moving when mouse button is released:
+document.onmouseup = null;
+document.onmousemove = null;
+}
+}
+//drag end//
   } else {
     x.style.display = "none";
     y.style.backgroundColor = "white";
@@ -665,19 +868,5 @@ function fbFunction() {
     x.removeChild(fbimg);
     info.removeChild(fbimg2);
     info.removeChild(fbLink);
-    info.removeChild(fbClose);
-  }
-}
-
-function fbCloseFunction() {
-  var link = document.getElementById("fbLink");
-  var img = document.getElementById("fbimg2");
-  var close = document.createElement("p");
-  if (link.style.display === "none") {
-    link.style.display = "flex";
-    img.style.display = "flex";
-  } else {
-    link.style.display = "none";
-    img.style.display = "none";
   }
 }

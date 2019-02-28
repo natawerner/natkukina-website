@@ -21,7 +21,7 @@ a {
   max-width: 100%;
 }
 .contacts {
-  z-index: 2;
+  z-index: 3;
 }
 #contacts {
   font-family: Pragmatica;
@@ -84,10 +84,8 @@ a {
 }
 
 .arena {
-  z-index: 1;
+  z-index: 2;
   position: absolute;
-  top: 10px;
-  right: 400px;
   display: flex;
   flex-direction: column;
 }
@@ -109,7 +107,7 @@ a {
   font-size: 24pt;
   color: #ff00ff;
   padding-bottom: 10px;
-  align-self: flex-end;
+  align-self: flex-start;
   line-height: normal;
 }
 
