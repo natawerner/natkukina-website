@@ -30,104 +30,6 @@ window.onload = function() {
     contents[i].style.display = "none";}
   };
 
-/*Constitution*/
-i = 0, constimages = ["images/const/1.png", "images/const/2.gif", "images/const/3.png", "images/const/4.png", "images/const/5.png", "images/const/6.jpg"];
-function constImage() {
-  if (i < constimages.length-1) {
-   i++;
-    } else {
-      i = 0;
-    }
-    document.getElementById('constimg').src = constimages[i];}
-
-constimages2 = ["images/const/arena/1.jpg", "images/const/arena/2.jpg", "images/const/arena/3.jpg", "images/const/arena/4.jpg", "images/const/arena/5.jpg", "images/const/arena/6.jpg", "images/const/arena/7.jpg"];
-i2 = Math.floor(Math.random()*constimages2.length);
-function constImage2() {
-  if (i2 < constimages2.length-1) {
-   i2++;
-    } else {
-      i2 = 0;
-    }
-    document.getElementById('constimg2').src = constimages2[i2];
-}
-
-function constFunction() {
-  var x = document.getElementById("const");
-  var text = document.getElementById("constText");
-  var info = document.getElementById("constInfo");
-  if (x.style.display === "none") {
-    var content = document.createElement("img");
-    content.src = "images/const/1.png";
-    x.insertBefore(content, text);
-    content.setAttribute("id","constimg");
-    content.setAttribute("onclick","constImage()")
-    x.style.display = "flex";
-    var arena = document.createElement("img");
-    arena.src = constimages2[i2];
-    info.appendChild(arena);
-    arena.setAttribute("id","constimg2");
-    arena.setAttribute("onclick","constImage2()")
-      var link = document.createElement("a");
-      link.href = "https://www.are.na/nat-kukina/please-assemble";
-      link.setAttribute("id","constLink")
-      link.target = "_blank";
-      link.innerHTML = "are.na";
-      info.appendChild(link);
-      //TO DRAG CONTAINERS //
-      info.style.top = "40px";
-      info.style.left = "50vw";
-dragElement(document.getElementById("constInfo"));
-
-function dragElement(elmnt) {
-var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-if (document.getElementById(elmnt.id)) {
-// if present, the header is where you move the DIV from:
-document.getElementById(elmnt.id).onmousedown = dragMouseDown;
-} else {
-// otherwise, move the DIV from anywhere inside the DIV:
-elmnt.onmousedown = dragMouseDown;
-}
-
-function dragMouseDown(e) {
-e = e || window.event;
-e.preventDefault();
-// get the mouse cursor position at startup:
-pos3 = e.clientX;
-pos4 = e.clientY;
-document.onmouseup = closeDragElement;
-// call a function whenever the cursor moves:
-document.onmousemove = elementDrag;
-}
-
-function elementDrag(e) {
-e = e || window.event;
-e.preventDefault();
-// calculate the new cursor position:
-pos1 = pos3 - e.clientX;
-pos2 = pos4 - e.clientY;
-pos3 = e.clientX;
-pos4 = e.clientY;
-// set the element's new position:
-elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
-elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
-}
-
-function closeDragElement() {
-// stop moving when mouse button is released:
-document.onmouseup = null;
-document.onmousemove = null;
-}
-}
-//drag end//
-  } else {
-    x.style.display = "none";
-    x.removeChild(constimg);
-    info.removeChild(constimg2);
-      info.removeChild(constLink);
-  }
-}
-
-
 /*Imposter*/
 u = 0, imposterimages = ["images/imposter/1.png", "images/imposter/2.png", "images/imposter/3.png", "images/imposter/4.png", "images/imposter/5.png"];
 function imposterImage() {
@@ -177,8 +79,10 @@ function imposterFunction() {
     link.innerHTML = "are.na";
     info.appendChild(link);
     //TO DRAG CONTAINERS //
-    info.style.top = "40px";
-    info.style.left = "50vw";
+    if (screen.width > 1000) {
+      info.style.top = "40px";
+      info.style.left = "50vw";
+    }
 dragElement(document.getElementById("imposterInfo"));
 
 function dragElement(elmnt) {
@@ -232,6 +136,106 @@ document.onmousemove = null;
   }
 }
 
+/*Constitution*/
+i = 0, constimages = ["images/const/1.png", "images/const/2.gif", "images/const/3.png", "images/const/4.png", "images/const/5.png", "images/const/6.jpg"];
+function constImage() {
+  if (i < constimages.length-1) {
+   i++;
+    } else {
+      i = 0;
+    }
+    document.getElementById('constimg').src = constimages[i];}
+
+constimages2 = ["images/const/arena/1.jpg", "images/const/arena/2.jpg", "images/const/arena/3.jpg", "images/const/arena/4.jpg", "images/const/arena/5.jpg", "images/const/arena/6.jpg", "images/const/arena/7.jpg"];
+i2 = Math.floor(Math.random()*constimages2.length);
+function constImage2() {
+  if (i2 < constimages2.length-1) {
+   i2++;
+    } else {
+      i2 = 0;
+    }
+    document.getElementById('constimg2').src = constimages2[i2];
+}
+
+function constFunction() {
+  var x = document.getElementById("const");
+  var text = document.getElementById("constText");
+  var info = document.getElementById("constInfo");
+  if (x.style.display === "none") {
+    var content = document.createElement("img");
+    content.src = "images/const/1.png";
+    x.insertBefore(content, text);
+    content.setAttribute("id","constimg");
+    content.setAttribute("onclick","constImage()")
+    x.style.display = "flex";
+    var arena = document.createElement("img");
+    arena.src = constimages2[i2];
+    info.appendChild(arena);
+    arena.setAttribute("id","constimg2");
+    arena.setAttribute("onclick","constImage2()")
+      var link = document.createElement("a");
+      link.href = "https://www.are.na/nat-kukina/please-assemble";
+      link.setAttribute("id","constLink")
+      link.target = "_blank";
+      link.innerHTML = "are.na";
+      info.appendChild(link);
+//TO DRAG CONTAINERS //
+if (screen.width > 1000) {
+  info.style.top = "40px";
+  info.style.left = "50vw";
+}
+dragElement(document.getElementById("constInfo"));
+
+function dragElement(elmnt) {
+var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+if (document.getElementById(elmnt.id)) {
+// if present, the header is where you move the DIV from:
+document.getElementById(elmnt.id).onmousedown = dragMouseDown;
+} else {
+// otherwise, move the DIV from anywhere inside the DIV:
+elmnt.onmousedown = dragMouseDown;
+}
+
+function dragMouseDown(e) {
+e = e || window.event;
+e.preventDefault();
+// get the mouse cursor position at startup:
+pos3 = e.clientX;
+pos4 = e.clientY;
+document.onmouseup = closeDragElement;
+// call a function whenever the cursor moves:
+document.onmousemove = elementDrag;
+}
+
+function elementDrag(e) {
+e = e || window.event;
+e.preventDefault();
+// calculate the new cursor position:
+pos1 = pos3 - e.clientX;
+pos2 = pos4 - e.clientY;
+pos3 = e.clientX;
+pos4 = e.clientY;
+// set the element's new position:
+elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+}
+
+function closeDragElement() {
+// stop moving when mouse button is released:
+document.onmouseup = null;
+document.onmousemove = null;
+}
+}
+//drag end//
+  } else {
+    x.style.display = "none";
+    x.removeChild(constimg);
+    info.removeChild(constimg2);
+      info.removeChild(constLink);
+  }
+}
+
+
 /*Interview*/
 z = 0, interviewimages = ["images/interview/1.png", "images/interview/2.png", "images/interview/3.png", "images/interview/4.png"];
 function interviewImage() {
@@ -280,8 +284,10 @@ if (x.style.display === "none") {
   link.innerHTML = "are.na";
   info.appendChild(link);
   //TO DRAG CONTAINERS //
-  info.style.top = "40px";
-  info.style.left = "50vw";
+  if (screen.width > 1000) {
+    info.style.top = "40px";
+    info.style.left = "50vw";
+  }
 dragElement(document.getElementById("interviewInfo"));
 
 function dragElement(elmnt) {
@@ -397,8 +403,10 @@ function silentVideoFunction() {
     link.innerHTML = "are.na";
     info.appendChild(link);
     //TO DRAG CONTAINERS //
-    info.style.top = "40px";
-    info.style.left = "50vw";
+    if (screen.width > 1000) {
+      info.style.top = "40px";
+      info.style.left = "50vw";
+    }
 dragElement(document.getElementById("silentVideoInfo"));
 
 function dragElement(elmnt) {
@@ -496,8 +504,10 @@ function calendarFunction() {
     link.innerHTML = "are.na";
     info.appendChild(link);
     //TO DRAG CONTAINERS //
-    info.style.top = "40px";
-    info.style.left = "50vw";
+    if (screen.width > 1000) {
+      info.style.top = "40px";
+      info.style.left = "50vw";
+    }
 dragElement(document.getElementById("calendarInfo"));
 
 function dragElement(elmnt) {
@@ -698,8 +708,10 @@ function hyperFunction() {
     link.innerHTML = "are.na";
     info.appendChild(link);
     //TO DRAG CONTAINERS //
-    info.style.top = "40px";
-    info.style.left = "50vw";
+    if (screen.width > 1000) {
+      info.style.top = "40px";
+      info.style.left = "50vw";
+    }
 dragElement(document.getElementById("hyperInfo"));
 
 function dragElement(elmnt) {
@@ -816,8 +828,10 @@ function fbFunction() {
     link.innerHTML = "are.na";
     info.appendChild(link);
     //TO DRAG CONTAINERS //
-    info.style.top = "40px";
-    info.style.left = "50vw";
+    if (screen.width > 1000) {
+      info.style.top = "40px";
+      info.style.left = "50vw";
+    }
 dragElement(document.getElementById("fbInfo"));
 
 function dragElement(elmnt) {

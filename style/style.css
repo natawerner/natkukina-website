@@ -14,12 +14,15 @@ a {
   z-index: 0;
   font-family: Pragmatica;
   font-size: 80px;
-  line-height: 95%;
+  line-height: 90%;
   text-transform: uppercase;
-  padding: 5px 10px 5px 10px;
-  cursor: pointer;
-  max-width: 100%;
+  padding: 10px 10px 10px 10px;
 }
+.project h1 {
+  width: 100%;
+  cursor: pointer;
+}
+
 .contacts {
   z-index: 3;
 }
@@ -103,17 +106,10 @@ a {
   align-self: center;
 }
 
-.arena p {
-  font-size: 24pt;
-  color: #ff00ff;
-  padding-bottom: 10px;
-  align-self: flex-start;
-  line-height: normal;
-}
 
 @media (max-width: 1000px) {
   .project {
-    padding: 15px;
+    padding: 20px;
   }
 
   .content{
@@ -147,23 +143,21 @@ a {
     top: -32px;
  }
 
- .info {
-   flex-direction:column;
- }
-
 .arena {
-  right: 250px;
-  margin: auto;
+  flex-direction: column-reverse;
+  position: relative;
 }
 
-.arena p {
-  font-size: 36pt;
+.arena img {
+  max-width: 80vw;
+  align-self: center;
+  height: auto;
 }
 .arena a {
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 10px;
   font-size: 36pt;
-}
-.arena img {
-  max-width: 50vw;
 }
 
 }
