@@ -152,6 +152,7 @@ a {
   max-width: 80vw;
   align-self: center;
   height: auto;
+  padding-bottom: 20px;
 }
 .arena a {
   padding-left: 0;
