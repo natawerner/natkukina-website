@@ -30,6 +30,28 @@ window.onload = function() {
     contents[i].style.display = "none";}
   };
 
+
+/*Rietveld*/
+function rietveldFunction() {
+  var x = document.getElementById("rietveld");
+  if (x.style.display === "none") {
+    var gif = document.createElement('a');
+    gif.setAttribute("href","https://rietveld.moscow");
+    gif.setAttribute("target","_blank")
+    var img = document.createElement('img');
+    img.src = "images/rietveld/rietveld.png";
+    gif.appendChild(img);
+    var text = document.getElementById("rietveldText");
+    x.insertBefore(gif, text);
+    gif.setAttribute("id", "rietveldimg");
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+    x.removeChild(rietveldimg);
+  }
+}
+
+
 /*Imposter*/
 u = 0, imposterimages = ["images/imposter/1.png", "images/imposter/2.png", "images/imposter/3.png", "images/imposter/4.png", "images/imposter/5.png"];
 function imposterImage() {
@@ -59,9 +81,8 @@ function imposterFunction() {
   if (x.style.display === "none") {
     var content = document.createElement("img");
     content.src = "images/imposter/1.png";
-    var store = document.getElementById("imposter");
     var text = document.getElementById("imposterText");
-    store.insertBefore(content, text);
+    x.insertBefore(content, text);
     content.setAttribute("id","imposterimg");
     content.setAttribute("onclick","imposterImage()")
     x.style.display = "flex";
