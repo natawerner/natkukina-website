@@ -24,6 +24,7 @@ function asteriskFunction() {
 
 
 /*Menu items*/
+/*Эта фунция находит все элементы с контентом и скрывает их при загрузке страницы. Тем не менее при загрузке иногда можно видеть, как тексты мелькают, а только потом скрываются. Именно поэтому я не вставляю картинки сразу в html, если бы они там были, сначала бы они сто лет грузились, а только потом срабатывал бы файл JS, который бы их скрывал, и было бы некрасиво. Это drawback того, что у меня весь контент на одной html странице*/
 window.onload = function() {
   var contents = document.getElementsByClassName("content");
   for(var i = 0; i < contents.length; i++) {
@@ -32,10 +33,15 @@ window.onload = function() {
 
 
 /*Rietveld*/
+/*Эта функция котрывает/закрывает контент проекта*/
 function rietveldFunction() {
+  /*Переменная х это тот контейнер, в котором у тебя лежит контент*/
   var x = document.getElementById("rietveld");
+   /*Первая часть if функции это действия, которые совершаются по клику, если контент скрыт.*/
   if (x.style.display === "none") {
+    /*Здесь я просто заново создаю все элементы, кроме текста (текст уже прописан в html), чтобы они загружались только тогда, когда мне это нужно, иначе они при загрузке страницы все начинают подгружаться и это очень долго и они все некрасиво вылезают.*/
     var gif = document.createElement('a');
+    /*В данном случае я создаю ссылку-картинку, присваиваю ей все аттрибуты, которые иначе были бы прописаны у нее в открывающем теге в html – id, class, src, onclick итд*/
     gif.setAttribute("href","https://rietveld.moscow");
     gif.setAttribute("target","_blank")
     var img = document.createElement('img');
@@ -53,6 +59,7 @@ function rietveldFunction() {
 
 
 /*Imposter*/
+/*Это функция которая позволяет листать по клику картинки. Есть список всех картинок, и на каждом клике он просто выбирает следующую картинку из списка*/
 u = 0, imposterimages = ["images/imposter/1.png", "images/imposter/2.png", "images/imposter/3.png", "images/imposter/4.png", "images/imposter/5.png"];
 function imposterImage() {
   if (u < imposterimages.length-1) {
@@ -63,6 +70,7 @@ function imposterImage() {
     document.getElementById('imposterimg').src = imposterimages[u];
 }
 imposterimages2 = ["images/imposter/arena/1.jpg", "images/imposter/arena/2.jpg", "images/imposter/arena/3.jpg", "images/imposter/arena/4.jpg", "images/imposter/arena/5.png", "images/imposter/arena/6.jpg", "images/imposter/arena/7.png"];
+/*Здесь еще в начале он выбирает не первую картинку, а рандомную, и уже от нее листает*/
 u2 = Math.floor(Math.random()*imposterimages2.length);
 function imposterImage2() {
   if (u2 < imposterimages2.length-1) {
@@ -72,7 +80,7 @@ function imposterImage2() {
     }
     document.getElementById('imposterimg2').src = imposterimages2[u2];
 }
-
+/*Та же функция с открытием/скрытием контента, только немного более сложная, потому что здесь создается больше жлем ентов, но структура точно такая же*/
 function imposterFunction() {
   var x = document.getElementById("imposter");
   var y = document.getElementById("imposter1");
@@ -99,11 +107,12 @@ function imposterFunction() {
     link.target = "_blank";
     link.innerHTML = "are.na";
     info.appendChild(link);
-    //TO DRAG CONTAINERS //
+//Эта штука для перетаскивания элементов. Вот эта маленькая if функция это просто для CSS для мобильной версии//
     if (screen.width > 1000) {
       info.style.top = "40px";
       info.style.left = "50vw";
     }
+    /*По идее единственное, что тебе нужно здесь изменить, это id элемента, который должен быть draggable. У меня это не очень умно прописано, этот код везде одинаковый, его можно было бы теоретически вставить один раз, но для этого мне пришлось бы переписыватьв всю структуру вообще. Так что если будешь жто вставлять, можем еще с тобой обсудить*/
 dragElement(document.getElementById("imposterInfo"));
 
 function dragElement(elmnt) {
