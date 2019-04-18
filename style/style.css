@@ -38,10 +38,10 @@ a {
 #asterisk {
   display: none;
   font-family: Pragmatica;
-  font-size: 216px;
+  font-size: 150px;
   color: #ff00ff;
   position: fixed;
-  top: -42px;
+  top: -10px;
   right: 20px;
   cursor: pointer;
   line-height: normal;
