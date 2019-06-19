@@ -65,8 +65,6 @@ window.onload = function() {
       content.setAttribute("id","daughtersimg");
       content.setAttribute("onclick","daughtersImage()")
       x.style.display = "flex";
-      y.style.backgroundColor = "black";
-      y.style.color = "white";
       var arena = document.createElement("img");
       arena.src = daughtersimages2[u2];
       info.appendChild(arena);
