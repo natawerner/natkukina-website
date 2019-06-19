@@ -31,6 +31,112 @@ window.onload = function() {
     contents[i].style.display = "none";}
   };
 
+  u = 0, daughtersimages = ["images/daughters/1.png", "images/daughters/2.png", "images/daughters/3.png", "images/daughters/4.png", "images/daughters/5.png"];
+  function daughtersImage() {
+    if (u < daughtersimages.length-1) {
+     u++;
+      } else {
+        u = 0;
+      }
+      document.getElementById('daughtersimg').src = daughtersimages[u];
+  }
+  daughtersimages2 = ["images/daughters/arena/1.jpg", "images/daughters/arena/2.jpg", "images/daughters/arena/3.jpg", "images/daughters/arena/4.jpg", "images/daughters/arena/5.jpg", "images/daughters/arena/6.jpg"];
+  /*Здесь еще в начале он выбирает не первую картинку, а рандомную, и уже от нее листает*/
+  u2 = Math.floor(Math.random()*daughtersimages2.length);
+  function daughtersImage2() {
+    if (u2 < daughtersimages2.length-1) {
+     u2++;
+      } else {
+        u2 = 0;
+      }
+      document.getElementById('daughtersimg2').src = daughtersimages2[u2];
+  }
+  /*Та же функция с открытием/скрытием контента, только немного более сложная, потому что здесь создается больше жлем ентов, но структура точно такая же*/
+  function daughtersFunction() {
+    var x = document.getElementById("daughters");
+    var y = document.getElementById("daughters1");
+    var text = document.getElementById("daughtersText");
+    var info = document.getElementById("daughtersInfo");
+    if (x.style.display === "none") {
+      var content = document.createElement("img");
+      content.src = "images/daughters/1.png";
+      var text = document.getElementById("daughtersText");
+      x.insertBefore(content, text);
+      content.setAttribute("id","daughtersimg");
+      content.setAttribute("onclick","daughtersImage()")
+      x.style.display = "flex";
+      y.style.backgroundColor = "black";
+      y.style.color = "white";
+      var arena = document.createElement("img");
+      arena.src = daughtersimages2[u2];
+      info.appendChild(arena);
+      arena.setAttribute("id","daughtersimg2");
+      arena.setAttribute("onclick","daughtersImage2()")
+      var link = document.createElement("a");
+      link.href = "https://www.are.na/nat-kukina/textile-myg8i0t5ebg";
+      link.setAttribute("id","daughtersLink")
+      link.target = "_blank";
+      link.innerHTML = "are.na";
+      info.appendChild(link);
+  //Эта штука для перетаскивания элементов. Вот эта маленькая if функция это просто для CSS для мобильной версии//
+      if (screen.width > 1000) {
+        info.style.top = "40px";
+        info.style.left = "50vw";
+      }
+      /*По идее единственное, что тебе нужно здесь изменить, это id элемента, который должен быть draggable. У меня это не очень умно прописано, этот код везде одинаковый, его можно было бы теоретически вставить один раз, но для этого мне пришлось бы переписыватьв всю структуру вообще. Так что если будешь жто вставлять, можем еще с тобой обсудить*/
+  dragElement(document.getElementById("daughtersInfo"));
+
+  function dragElement(elmnt) {
+  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  if (document.getElementById(elmnt.id)) {
+  // if present, the header is where you move the DIV from:
+  document.getElementById(elmnt.id).onmousedown = dragMouseDown;
+  } else {
+  // otherwise, move the DIV from anywhere inside the DIV:
+  elmnt.onmousedown = dragMouseDown;
+  }
+
+  function dragMouseDown(e) {
+  e = e || window.event;
+  e.preventDefault();
+  // get the mouse cursor position at startup:
+  pos3 = e.clientX;
+  pos4 = e.clientY;
+  document.onmouseup = closeDragElement;
+  // call a function whenever the cursor moves:
+  document.onmousemove = elementDrag;
+  }
+
+  function elementDrag(e) {
+  e = e || window.event;
+  e.preventDefault();
+  // calculate the new cursor position:
+  pos1 = pos3 - e.clientX;
+  pos2 = pos4 - e.clientY;
+  pos3 = e.clientX;
+  pos4 = e.clientY;
+  // set the element's new position:
+  elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+  elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+  }
+
+  function closeDragElement() {
+  // stop moving when mouse button is released:
+  document.onmouseup = null;
+  document.onmousemove = null;
+  }
+  }
+  //drag end//
+    } else {
+      x.style.display = "none";
+      y.style.backgroundColor = "white";
+      y.style.color = "black";
+      x.removeChild(daughtersimg);
+      info.removeChild(daughtersimg2);
+      info.removeChild(daughtersLink);
+    }
+  }
+
 
 /*Rietveld*/
 /*Эта функция котрывает/закрывает контент проекта*/
