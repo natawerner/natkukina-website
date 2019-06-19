@@ -129,8 +129,6 @@ window.onload = function() {
   //drag end//
     } else {
       x.style.display = "none";
-      y.style.backgroundColor = "white";
-      y.style.color = "black";
       x.removeChild(daughtersimg);
       info.removeChild(daughtersimg2);
       info.removeChild(daughtersLink);
