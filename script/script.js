@@ -31,7 +31,7 @@ window.onload = function() {
     contents[i].style.display = "none";}
   };
 
-  u = 0, daughtersimages = ["images/daughters/1.png", "images/daughters/2.png", "images/daughters/3.png", "images/daughters/4.png", "images/daughters/5.png"];
+  u = 0, daughtersimages = ["images/daughters/1.png", "images/daughters/2.png", "images/daughters/3.png", "images/daughters/4.png", "images/daughters/5.png", "images/daughters/6.png", "images/daughters/7.png"];
   function daughtersImage() {
     if (u < daughtersimages.length-1) {
      u++;
