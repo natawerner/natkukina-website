@@ -31,6 +31,83 @@ window.onload = function() {
     contents[i].style.display = "none";}
   };
 
+  su = 0, sunimages = ["images/sun/1.png", "images/sun/2.png"];
+   function sunImage() {
+     if (su < sunimages.length-1) {
+      su++;
+       } else {
+         su = 0;
+       }
+       document.getElementById('sunimg').src = sunimages[su];
+   }
+   function sunFunction() {
+     var x = document.getElementById("sun");
+     if (x.style.display === "none") {
+       var content = document.createElement("img");
+       content.src = "images/sun/1.png";
+       var text = document.getElementById("sunText");
+       x.insertBefore(content, text);
+       content.setAttribute("id","sunimg");
+       content.setAttribute("onclick","sunImage()")
+       x.style.display = "flex";
+     } else {
+       x.style.display = "none";
+       x.removeChild(sunimg);
+     }
+   }
+
+  rim = 0, rimaimages = ["images/rima/1.png"];
+   function rimaImage() {
+     if (rim < rimaimages.length-1) {
+      f++;
+       } else {
+         f = 0;
+       }
+       document.getElementById('rimaimg').src = rimaimages[f];
+   }
+   function rimaFunction() {
+     var x = document.getElementById("rima");
+     if (x.style.display === "none") {
+       var content = document.createElement("img");
+       content.src = "images/rima/1.png";
+       var text = document.getElementById("rimaText");
+       x.insertBefore(content, text);
+       content.setAttribute("id","rimaimg");
+       content.setAttribute("onclick","rimaImage()")
+       x.style.display = "flex";
+     } else {
+       x.style.display = "none";
+       x.removeChild(rimaimg);
+     }
+   }
+
+
+rin = 0, rinaimages = ["images/rina/1.png"];
+ function rinaImage() {
+   if (rin < rinaimages.length-1) {
+    f++;
+     } else {
+       f = 0;
+     }
+     document.getElementById('rinaimg').src = rinaimages[f];
+ }
+ function rinaFunction() {
+   var x = document.getElementById("rina");
+   if (x.style.display === "none") {
+     var content = document.createElement("img");
+     content.src = "images/rina/1.png";
+     var text = document.getElementById("rinaText");
+     x.insertBefore(content, text);
+     content.setAttribute("id","rinaimg");
+     content.setAttribute("onclick","rinaImage()")
+     x.style.display = "flex";
+   } else {
+     x.style.display = "none";
+     x.removeChild(rinaimg);
+   }
+ }
+
+
   u = 0, daughtersimages = ["images/daughters/1.png", "images/daughters/2.png", "images/daughters/3.png", "images/daughters/4.png", "images/daughters/5.png", "images/daughters/6.png"];
   function daughtersImage() {
     if (u < daughtersimages.length-1) {

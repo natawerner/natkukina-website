@@ -9,6 +9,18 @@ a {
   text-decoration: none;
 }
 
+#sunimg {
+  filter: none;
+}
+
+#rinaimg {
+  filter: none;
+}
+
+#lugemikimg {
+  filter: none;
+}
+
 .project {
   position: relative;
   z-index: 0;
