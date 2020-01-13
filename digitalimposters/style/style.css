@@ -1,0 +1,68 @@
+
+@font-face {
+  font-family: 'FavoritPro';
+  src: url('../fonts/FavoritProBook.otf');
+}
+
+
+
+.all {
+  display: flex;
+  flex-direction: column;
+	height: 100vh;
+  align-items: stretch;
+  justify-content: space-between;
+  font-family: FavoritPro;
+  font-size: 40pt;
+}
+
+.top {
+  text-align: center;
+  margin: 20px;
+  cursor: pointer;
+}
+
+.bottom {
+  text-align: center;
+  margin: 20px;
+  cursor: pointer;
+}
+
+.main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main p {
+  vertical-align: middle;
+  margin: 20px;
+  cursor: pointer;
+}
+
+.main img {
+  max-width: 80vw;
+  max-height: 70vh;
+}
+
+#descriptionText {
+  font-family: FavoritPro;
+  z-index: 3;
+  font-size: 20pt;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  cursor: default;
+  width: 30vw;
+}
+
+@media (max-width: 1000px) {
+  .all {
+    font-size: 60px;
+  }
+  #descriptionText {
+    font-family: FavoritPro;
+    font-size: 80px;
+    width: 80%;
+  }
+}
