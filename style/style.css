@@ -29,6 +29,7 @@ a {
   line-height: 90%;
   text-transform: uppercase;
   padding: 10px 10px 10px 10px;
+  border-bottom: 7px solid;
 }
 .project h1 {
   width: 100%;
