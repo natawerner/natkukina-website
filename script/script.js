@@ -32,7 +32,7 @@ window.onload = function() {
   var x = document.getElementById("asterisk");
   var y = document.getElementById("contacts");
   x.style.display = "block";
-  y.style.display = "none"    
+  y.style.display = "none"
   };
 
 
@@ -51,8 +51,16 @@ function sunImage() {
      if (x.style.display === "none") {
        var content = document.createElement("img");
        content.src = "images/sun/1.png";
+       content.classList.add("box", "faded-out");
+       requestAnimationFrame(() => {
+       content.classList.remove("faded-out")
+       });
        var text = document.getElementById("sunText");
        x.insertBefore(content, text);
+       text.classList.add("box", "faded-out");
+       requestAnimationFrame(() => {
+       text.classList.remove("faded-out")
+       });
        content.setAttribute("id","sunimg");
        content.setAttribute("onclick","sunImage()")
        x.style.display = "flex";
@@ -76,8 +84,16 @@ function sunImage() {
      if (x.style.display === "none") {
        var content = document.createElement("img");
        content.src = "images/rima/1.png";
+       content.classList.add("box", "faded-out");
+       requestAnimationFrame(() => {
+       content.classList.remove("faded-out")
+       });
        var text = document.getElementById("rimaText");
        x.insertBefore(content, text);
+       text.classList.add("box", "faded-out");
+       requestAnimationFrame(() => {
+       text.classList.remove("faded-out")
+       });
        content.setAttribute("id","rimaimg");
        content.setAttribute("onclick","rimaImage()")
        x.style.display = "flex";
@@ -102,8 +118,16 @@ rin = 0, rinaimages = ["images/rina/1.png"];
    if (x.style.display === "none") {
      var content = document.createElement("img");
      content.src = "images/rina/1.png";
+     content.classList.add("box", "faded-out");
+     requestAnimationFrame(() => {
+     content.classList.remove("faded-out")
+     });
      var text = document.getElementById("rinaText");
      x.insertBefore(content, text);
+     text.classList.add("box", "faded-out");
+     requestAnimationFrame(() => {
+     text.classList.remove("faded-out")
+     });
      content.setAttribute("id","rinaimg");
      content.setAttribute("onclick","rinaImage()")
      x.style.display = "flex";
@@ -133,27 +157,19 @@ rin = 0, rinaimages = ["images/rina/1.png"];
     if (x.style.display === "none") {
       var content = document.createElement("img");
       content.src = "images/daughters/1.png";
+      content.classList.add("box", "faded-out");
+      requestAnimationFrame(() => {
+      content.classList.remove("faded-out")
+      });
       var text = document.getElementById("daughtersText");
       x.insertBefore(content, text);
+      text.classList.add("box", "faded-out");
+      requestAnimationFrame(() => {
+      text.classList.remove("faded-out")
+      });
       content.setAttribute("id","daughtersimg");
       content.setAttribute("onclick","daughtersImage()")
       x.style.display = "flex";
-      var arena = document.createElement("img");
-      arena.src = daughtersimages2[u2];
-      info.appendChild(arena);
-      arena.setAttribute("id","daughtersimg2");
-      arena.setAttribute("onclick","daughtersImage2()")
-      var link = document.createElement("a");
-      link.href = "https://www.are.na/nat-kukina/textile-myg8i0t5ebg";
-      link.setAttribute("id","daughtersLink")
-      link.target = "_blank";
-      link.innerHTML = "are.na";
-      info.appendChild(link);
-  //Эта штука для перетаскивания элементов. Вот эта маленькая if функция это просто для CSS для мобильной версии//
-      if (screen.width > 1000) {
-        info.style.top = "40px";
-        info.style.left = "50vw";
-      }
 
     } else {
       x.style.display = "none";
@@ -179,8 +195,17 @@ function rietveldFunction() {
     var img = document.createElement('img');
     img.src = "images/rietveld/rietveld.png";
     gif.appendChild(img);
+    gif.appendChild(img);
+    gif.classList.add("box", "faded-out");
+    requestAnimationFrame(() => {
+    gif.classList.remove("faded-out")
+    });
     var text = document.getElementById("rietveldText");
     x.insertBefore(gif, text);
+    text.classList.add("box", "faded-out");
+    requestAnimationFrame(() => {
+    text.classList.remove("faded-out")
+    });
     gif.setAttribute("id", "rietveldimg");
     x.style.display = "block";
   } else {
@@ -204,8 +229,16 @@ function bhsadgdFunction() {
     var img = document.createElement('img');
     img.src = "images/bhsadgd/1.png";
     png.appendChild(img);
+    png.classList.add("box", "faded-out");
+    requestAnimationFrame(() => {
+    png.classList.remove("faded-out")
+    });
     var text = document.getElementById("bhsadgdText");
     x.insertBefore(png, text);
+    text.classList.add("box", "faded-out");
+    requestAnimationFrame(() => {
+    text.classList.remove("faded-out")
+    });
     png.setAttribute("id", "bhsadgdimg");
     x.style.display = "block";
   } else {
@@ -242,7 +275,15 @@ function constFunction() {
   if (x.style.display === "none") {
     var content = document.createElement("img");
     content.src = "images/const/1.png";
+    content.classList.add("box", "faded-out");
+    requestAnimationFrame(() => {
+    content.classList.remove("faded-out")
+    });
     x.insertBefore(content, text);
+    text.classList.add("box", "faded-out");
+    requestAnimationFrame(() => {
+    text.classList.remove("faded-out")
+    });
     content.setAttribute("id","constimg");
     content.setAttribute("onclick","constImage()")
     x.style.display = "flex";
@@ -277,8 +318,16 @@ var info = document.getElementById("interviewInfo");
 if (x.style.display === "none") {
   var content = document.createElement("img");
   content.src = "images/interview/1.png";
+  content.classList.add("box", "faded-out");
+  requestAnimationFrame(() => {
+  content.classList.remove("faded-out")
+  });
   var text = document.getElementById("interviewText");
   x.insertBefore(content, text);
+  text.classList.add("box", "faded-out");
+  requestAnimationFrame(() => {
+  text.classList.remove("faded-out")
+  });
   content.setAttribute("id","interviewimg");
   content.setAttribute("onclick","interviewImage()")
   x.style.display = "flex";
@@ -310,8 +359,16 @@ function filmClubFunction() {
   if (x.style.display === "none") {
     var content = document.createElement("img");
     content.src = "images/filmclub/1.png";
+    content.classList.add("box", "faded-out");
+    requestAnimationFrame(() => {
+    content.classList.remove("faded-out")
+    });
     var text = document.getElementById("filmClubText");
     x.insertBefore(content, text);
+    text.classList.add("box", "faded-out");
+    requestAnimationFrame(() => {
+    text.classList.remove("faded-out")
+    });
     content.setAttribute("id","filmclubimg");
     content.setAttribute("onclick","filmclubImage()")
     x.style.display = "flex";
@@ -342,7 +399,12 @@ function silentVideoFunction() {
     video.src = 'https://cdn.glitch.com/2e0cf87a-999b-4b20-bf6a-2358bd8f52f0%2F1.mp4?1550940475371';
     video.autoplay = false;
     video.controls = true;
-    x.insertBefore(video, text)
+    x.insertBefore(video, text);
+
+    text.classList.add("box", "faded-out");
+    requestAnimationFrame(() => {
+    text.classList.remove("faded-out")
+    });
     video.setAttribute("id", "silentVideoVideo");
     x.style.display = "block";
 
@@ -383,8 +445,16 @@ function calendarFunction() {
   if (x.style.display === "none") {
     var content = document.createElement("img");
     content.src = "images/calendar/1.png";
+    content.classList.add("box", "faded-out");
+    requestAnimationFrame(() => {
+    content.classList.remove("faded-out")
+    });
     var text = document.getElementById("calendarText");
     x.insertBefore(content, text);
+    text.classList.add("box", "faded-out")
+    requestAnimationFrame(() => {
+    text.classList.remove("faded-out")
+    });
     content.setAttribute("id","calendarimg");
     content.setAttribute("onclick","calendarImage()")
     x.style.display = "flex";
@@ -413,8 +483,16 @@ function wysinawygFunction() {
   if (x.style.display === "none") {
     var content = document.createElement("img");
     content.src = "images/wysinawyg/1.png";
+    content.classList.add("box", "faded-out");
+    requestAnimationFrame(() => {
+    content.classList.remove("faded-out")
+    });
     var text = document.getElementById("wysinawygText");
     x.insertBefore(content, text);
+    text.classList.add("box", "faded-out");
+    requestAnimationFrame(() => {
+    text.classList.remove("faded-out")
+    });
     content.setAttribute("id","wysinawygimg");
     content.setAttribute("onclick","wysinawygImage()")
     x.style.display = "flex";
@@ -440,8 +518,16 @@ function lugemikFunction() {
   if (x.style.display === "none") {
     var content = document.createElement("img");
     content.src = "images/lugemik/1.png";
+    content.classList.add("box", "faded-out");
+    requestAnimationFrame(() => {
+    content.classList.remove("faded-out")
+    });
     var text = document.getElementById("lugemikText");
     x.insertBefore(content, text);
+    text.classList.add("box", "faded-out");
+    requestAnimationFrame(() => {
+    text.classList.remove("faded-out")
+    });
     content.setAttribute("id","lugemikimg");
     content.setAttribute("onclick","lugemikImage()")
     x.style.display = "flex";
@@ -459,8 +545,16 @@ function toteFunction() {
     x.style.display = "flex";
     var content = document.createElement("img");
     content.src = "images/tote/1.jpg";
+    content.classList.add("box", "faded-out");
+    requestAnimationFrame(() => {
+    content.classList.remove("faded-out")
+    });
     var text = document.getElementById("toteText");
     x.insertBefore(content, text);
+    text.classList.add("box", "faded-out");
+    requestAnimationFrame(() => {
+    text.classList.remove("faded-out")
+    });
     content.setAttribute("id","toteimg");
     x.style.display = "flex";
   } else {

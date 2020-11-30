@@ -3,7 +3,9 @@
   font-family: 'Pragmatica';
   src: url('https://cdn.glitch.com/2e0cf87a-999b-4b20-bf6a-2358bd8f52f0%2Fpragmatica.ttf?1550441282993');
 }
-
+html {
+  scroll-behavior: smooth;
+}
 a {
   color: #000000;
   text-decoration: none;
@@ -191,4 +193,13 @@ a {
   font-size: 36pt;
 }
 
+}
+
+.box {
+    transition: opacity 1000ms;
+    will-change: opacity;
+}
+
+.box.faded-out {
+    opacity: 0;
 }
