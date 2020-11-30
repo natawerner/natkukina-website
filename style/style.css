@@ -71,15 +71,15 @@ a {
 .content img {
   filter: drop-shadow(0 0 0.5rem black);
   object-fit: contain;
-  max-width: 60%;
+  max-width: 90%;
   align-self: flex-start;
-  max-height: 80vh;
+  max-height: 90vh;
   margin-right: 20px;
   cursor: e-resize;
 }
 
 .content video {
-  max-height: 80vh;
+  max-height: 90vh;
   margin-right: 20px;
   margin-bottom: 20px;
 }
@@ -123,7 +123,17 @@ a {
   cursor: pointer;
   padding-bottom: 20px;
 }
- #rietveldText p {
+
+#rietveldText p {
+  max-width: 800px;
+}
+
+#bhsadgdimg img {
+  cursor: pointer;
+  padding-bottom: 20px;
+}
+
+ #bhsadgdText p {
    max-width: 800px;
  }
 
