@@ -35,7 +35,7 @@ window.onload = function() {
   y.style.display = "none"
   };
 
-
+/* Город Солнца*/
 su = 0, sunimages = ["images/sun/1.png", "images/sun/2.png"];
 
 function sunImage() {
@@ -560,5 +560,150 @@ function toteFunction() {
   } else {
     x.style.display = "none";
     x.removeChild(toteimg);
+  }
+}
+
+
+/*mmoma posters*/
+cm = 0, mmomaimages = ["images/mmoma/1.png", "images/mmoma/2.png", "images/mmoma/3.png", "images/mmoma/4.png", "images/mmoma/5.png", "images/mmoma/6.png", "images/mmoma/7.png", "images/mmoma/8.png"];
+function mmomaImage() {
+  if (cm < mmomaimages.length-1) {
+   cm++;
+    } else {
+      cm = 0;
+    }
+    document.getElementById('mmomaimg').src = mmomaimages[cm];
+}
+
+function mmomaFunction() {
+  var x = document.getElementById("mmoma");
+  var text = document.getElementById("mmomaText");
+  if (x.style.display === "none") {
+    var content = document.createElement("img");
+    content.src = "images/mmoma/1.png";
+    content.classList.add("box", "faded-out");
+    requestAnimationFrame(() => {
+    content.classList.remove("faded-out")
+    });
+    var text = document.getElementById("mmomaText");
+    x.insertBefore(content, text);
+    text.classList.add("box", "faded-out")
+    requestAnimationFrame(() => {
+    text.classList.remove("faded-out")
+    });
+    content.setAttribute("id","mmomaimg");
+    content.setAttribute("onclick","mmomaImage()")
+    x.style.display = "flex";
+  } else {
+    x.style.display = "none";
+    x.removeChild(mmomaimg);
+  }
+}
+
+/*kandinsky*/
+cf = 0, kandimages = ["images/kand/1.png", "images/kand/2.jpg", "images/kand/3.png", "images/kand/4.png"];
+function kandImage() {
+  if (cf < kandimages.length-1) {
+   cf++;
+    } else {
+      cf = 0;
+    }
+    document.getElementById('kandimg').src = kandimages[cf];
+}
+
+function kandFunction() {
+  var x = document.getElementById("kand");
+  var text = document.getElementById("kandText");
+  if (x.style.display === "none") {
+    var content = document.createElement("img");
+    content.src = "images/kand/1.png";
+    content.classList.add("box", "faded-out");
+    requestAnimationFrame(() => {
+    content.classList.remove("faded-out")
+    });
+    var text = document.getElementById("kandText");
+    x.insertBefore(content, text);
+    text.classList.add("box", "faded-out")
+    requestAnimationFrame(() => {
+    text.classList.remove("faded-out")
+    });
+    content.setAttribute("id","kandimg");
+    content.setAttribute("onclick","kandImage()")
+    x.style.display = "flex";
+  } else {
+    x.style.display = "none";
+    x.removeChild(kandimg);
+  }
+}
+
+
+
+/*Summa Technologiae*/
+/*Эта функция котрывает/закрывает контент проекта*/
+function stFunction() {
+  /*Переменная х это тот контейнер, в котором у тебя лежит контент*/
+  var x = document.getElementById("st");
+   /*Первая часть if функции это действия, которые совершаются по клику, если контент скрыт.*/
+  if (x.style.display === "none") {
+    /*Здесь я просто заново создаю все элементы, кроме текста (текст уже прописан в html), чтобы они загружались только тогда, когда мне это нужно, иначе они при загрузке страницы все начинают подгружаться и это очень долго и они все некрасиво вылезают.*/
+    var gif = document.createElement('a');
+    /*В данном случае я создаю ссылку-картинку, присваиваю ей все аттрибуты, которые иначе были бы прописаны у нее в открывающем теге в html – id, class, src, onclick итд*/
+    gif.setAttribute("href","https://summatechnologiae.e-flux.com");
+    gif.setAttribute("target","_blank")
+    var img = document.createElement('img');
+    img.src = "images/st/1.png";
+    gif.appendChild(img);
+    gif.appendChild(img);
+    gif.classList.add("box", "faded-out");
+    requestAnimationFrame(() => {
+    gif.classList.remove("faded-out")
+    });
+    var text = document.getElementById("stText");
+    x.insertBefore(gif, text);
+    text.classList.add("box", "faded-out");
+    requestAnimationFrame(() => {
+    text.classList.remove("faded-out")
+    });
+    gif.setAttribute("id", "stimg");
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+    x.removeChild(stimg);
+  }
+}
+
+/*brusnika*/
+cz = 0, brusnikaimages = ["images/brusnika/1.png", "images/brusnika/2.jpg", "images/brusnika/3.jpg", "images/brusnika/4.jpg", "images/brusnika/5.png", "images/brusnika/6.jpg", "images/brusnika/7.jpg", "images/brusnika/8.png"];
+function brusnikaImage() {
+  if (cz < brusnikaimages.length-1) {
+   cz++;
+    } else {
+      cz = 0;
+    }
+    document.getElementById('brusnikaimg').src = brusnikaimages[cz];
+}
+
+function brusnikaFunction() {
+  var x = document.getElementById("brusnika");
+  var text = document.getElementById("brusnikaText");
+  if (x.style.display === "none") {
+    var content = document.createElement("img");
+    content.src = "images/brusnika/1.png";
+    content.classList.add("box", "faded-out");
+    requestAnimationFrame(() => {
+    content.classList.remove("faded-out")
+    });
+    var text = document.getElementById("brusnikaText");
+    x.insertBefore(content, text);
+    text.classList.add("box", "faded-out")
+    requestAnimationFrame(() => {
+    text.classList.remove("faded-out")
+    });
+    content.setAttribute("id","brusnikaimg");
+    content.setAttribute("onclick","brusnikaImage()")
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+    x.removeChild(brusnikaimg);
   }
 }

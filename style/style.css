@@ -27,11 +27,11 @@ a {
   position: relative;
   z-index: 0;
   font-family: Pragmatica;
-  font-size: 80px;
+  font-size: 60px;
   line-height: 90%;
   text-transform: uppercase;
   padding: 10px 10px 10px 10px;
-  border-bottom: 7px solid;
+  border-bottom: 4px solid;
 }
 .project h1 {
   width: 100%;
@@ -71,7 +71,7 @@ a {
   cursor: default;
 }
 .content img {
-  filter: drop-shadow(0 0 0.5rem black);
+  /*filter: drop-shadow(0 0 0.5rem black);*/
   object-fit: contain;
   max-width: 90%;
   align-self: flex-start;
@@ -132,6 +132,10 @@ a {
 
 #bhsadgdimg img {
   cursor: pointer;
+  padding-bottom: 20px;
+}
+
+#brusnikaimg {
   padding-bottom: 20px;
 }
 
@@ -196,7 +200,7 @@ a {
 }
 
 .box {
-    transition: opacity 1000ms;
+    transition: opacity 1200ms;
     will-change: opacity;
 }
 
