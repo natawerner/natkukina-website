@@ -27,11 +27,11 @@ a {
   position: relative;
   z-index: 0;
   font-family: Pragmatica;
-  font-size: 60px;
+  font-size: 20px;
   line-height: 90%;
-  text-transform: uppercase;
-  padding: 10px 10px 10px 10px;
-  border-bottom: 4px solid;
+  text-transform: lowercase;
+  padding: 20px 10px 20px 10px;
+  border-bottom: 1px solid;
 }
 .project h1 {
   width: 100%;
@@ -53,10 +53,10 @@ a {
 #asterisk {
   display: none;
   font-family: Pragmatica;
-  font-size: 150px;
+  font-size: 40px;
   color: #ff00ff;
   position: fixed;
-  top: -10px;
+  top: 3px;
   right: 20px;
   cursor: pointer;
   line-height: normal;
